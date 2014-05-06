@@ -44,13 +44,9 @@
 ;-----------;
 
 ;; Ido mode
-;; Enable IDO
-(require 'ido)
-(ido-mode t)
-(setq ido-enable-flex-matching t)
+(require 'ido-settings)
 
 ;; Pig mode
-(include-elget-plugin "pig-mode")
 (require 'pig-settings)
 
 ;; MuMaMo
@@ -80,3 +76,5 @@
 
 
 
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)

@@ -20,17 +20,16 @@
                :load "pig-mode.el"  
                :compile ("pig-mode.el")  
                :features pig-mode)
-        (:name ess-site
+        (:name ess
                :type git
                :url "git://github.com/emacs-ess/ESS.git"
-               :load-path("./lisp")
+               :load-path "lisp"
                :build ("make")
                :features ess-site)))
 
 ; custom packages to install
 (setq my-elget-packages 
         (append
-            '(pig-mode ess-site)
             (mapcar 'el-get-source-name el-get-sources)
             '(auctex auto-complete color-theme-solarized ein)  
             '(magit markdown-mode matlab-mode nxhtml pydoc-info)

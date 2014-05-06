@@ -8,11 +8,11 @@
 ; language
 (setq current-language-environment "English")
 ;; Set window title to full file name
-(setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
+(setq frame-title-format '("%b %+%+ %f"))
 
 ; don't show the startup screen
 (setq inhibit-startup-screen 1)
-; don't show the menu bar
+; show the menu bar
 (menu-bar-mode 1)
 ; don't show the tool bar
 (require 'tool-bar)
@@ -23,6 +23,8 @@
 ; turn on mouse wheel support for scrolling
 (require 'mwheel)
 (mouse-wheel-mode 1)
+; show line number
+(global-linum-mode t)
 
 ; set command key to be meta instead of option
 (if (system-is-mac)
@@ -36,6 +38,8 @@
 (setq-default truncate-lines 1)
 ; truncate lines even in partial-width windows
 (setq truncate-partial-width-windows 1)
+; wrap line respecting words
+; (global-visual-line-mode t)
 
 ; default window width and height
 (defun custom-set-frame-size ()
@@ -45,10 +49,10 @@
 (add-hook 'before-make-frame-hook 'custom-set-frame-size)
 
 ; window modifications
-;; (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-;; (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-;; (global-set-key (kbd "S-C-<down>") 'shrink-window)
-;; (global-set-key (kbd "S-C-<up>") 'enlarge-window)
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 ; always use spaces, not tabs, when indenting
 (setq-default indent-tabs-mode nil)
@@ -67,7 +71,7 @@
 (global-set-key [f4] 'goto-line)
 
 ; require final newlines in files when they are saved
-(setq require-final-newline 1)
+(setq require-final-newline 0)
 ; add a new line when going to the next line
 (setq next-line-add-newlines t)
 
@@ -104,13 +108,3 @@
 (setq auto-save-default nil)
 
 (provide 'general-settings)
-
-
-
-
-
-
-
-
-
-
