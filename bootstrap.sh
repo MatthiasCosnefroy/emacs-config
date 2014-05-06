@@ -7,7 +7,7 @@ cd "$(dirname "${BASH_SOURCE}")"
 git pull origin master
 
 function clean() {
-        git clean -nx
+    git clean -nx
 	read -p "Clean the above files? (y/n) " -n 1
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -18,13 +18,13 @@ function clean() {
 function doIt() {
     for i in $(ls -a); do 
 	if [ $i != '.' -a $i != '..' -a $i != '.git' -a $i != '.DS_Store' -a $i != 'bootstrap.sh' -a $i != 'README.md' -a $i != '.gitignore' -a $i != '.gitmodules' ]; then 
-            if [ $(uname) == "Darwin" ]; then
-	        echo "$i"
+        if [ $(uname) == "Darwin" ]; then
+            echo "$i"
 	        gcp -alrf "$i" "$HOME/"
-            else
-                echo "$i"
-                cp -alrf "$i" "$HOME/"
-            fi
+        else
+            echo "$i"
+            cp -alrf "$i" "$HOME/"
+        fi
 	fi
     done
 }
