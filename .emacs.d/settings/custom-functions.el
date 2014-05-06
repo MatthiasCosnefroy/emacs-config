@@ -24,18 +24,34 @@
   (interactive)
   (string-equal system-type "gnu/linux"))
 
-(defun make-plugin-path (plugin)
-  (expand-file-name
-   (concat plugin-path plugin)))
-
-(defun include-plugin (plugin)
-  (add-to-list 'load-path (make-plugin-path plugin)))
-
 (defun make-elget-path (plugin)
   (expand-file-name
    (concat elget-path plugin)))
 
 (defun include-elget-plugin (plugin)
   (add-to-list 'load-path (make-elget-path plugin)))
+
+(defun create-directory (dir)
+  (unless (file-exists-p dir)
+    (make-directory dir)))
+
+; set PATH, when we don't load .bashrc
+; function from https://gist.github.com/jakemcc/3887459
+(defun set-exec-path-from-shell-PATH ()
+  (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+  (let ((path-from-shell (shell-command-to-string "$SHELL -i -c 'echo -n $PATH'")))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
+
+; derived from ELPA installation  
+; http://tromey.com/elpa/install.html  
+(defun eval-url (url)  
+  (let ((buffer (url-retrieve-synchronously url)))  
+  (save-excursion  
+    (set-buffer buffer)  
+    (goto-char (point-min))  
+    (re-search-forward "^$" nil 'move)  
+    (eval-region (point) (point-max))  
+    (kill-buffer (current-buffer)))))
 
 (provide 'custom-functions)

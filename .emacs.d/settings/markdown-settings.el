@@ -2,7 +2,7 @@
 ;;; Markdown mode ;;;
 ;-------------------;
 
-(include-plugin "markdown-mode")
+(include-elget-plugin "markdown-mode")
 (autoload 'markdown-mode "markdown-mode.el"
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist

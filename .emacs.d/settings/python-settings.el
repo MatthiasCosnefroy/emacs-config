@@ -44,7 +44,7 @@
 (setq ein:query-timeout 1000)
 
 ; IPython notebook
-(include-plugin "emacs-ipython-notebook/lisp")
+(include-elget-plugin "emacs-ipython-notebook/lisp")
 (require 'ein)
 
 ; shortcut function to load notebooklist
@@ -59,7 +59,7 @@
 ;; ------------------
 
 ; pydoc info
-(include-plugin "pydoc-info-0.2")
+(include-elget-plugin "pydoc-info-0.2")
 (require 'pydoc-info)
 
 ;; ; jedi python completion

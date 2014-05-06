@@ -3,22 +3,17 @@
 ;--------------------------------;
 
 ; set PATH, because we don't load .bashrc
-; function from https://gist.github.com/jakemcc/3887459
-(defun set-exec-path-from-shell-PATH ()
-  (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
-  (let ((path-from-shell (shell-command-to-string "$SHELL -i -c 'echo -n $PATH'")))
-    (setenv "PATH" path-from-shell)
-    (setq exec-path (split-string path-from-shell path-separator))))
- 
 (if window-system (set-exec-path-from-shell-PATH))
 
 ; language
 (setq current-language-environment "English")
+;; Set window title to full file name
+(setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
 
 ; don't show the startup screen
 (setq inhibit-startup-screen 1)
 ; don't show the menu bar
-(menu-bar-mode 0)
+(menu-bar-mode 1)
 ; don't show the tool bar
 (require 'tool-bar)
 (tool-bar-mode 0)
@@ -45,7 +40,7 @@
 ; default window width and height
 (defun custom-set-frame-size ()
   (add-to-list 'default-frame-alist '(height . 50))
-  (add-to-list 'default-frame-alist '(width . 178)))
+  (add-to-list 'default-frame-alist '(width . 79)))
 (custom-set-frame-size)
 (add-hook 'before-make-frame-hook 'custom-set-frame-size)
 
@@ -109,3 +104,13 @@
 (setq auto-save-default nil)
 
 (provide 'general-settings)
+
+
+
+
+
+
+
+
+
+

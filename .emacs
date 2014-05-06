@@ -1,7 +1,5 @@
 ;; path where settings files are kept
 (add-to-list 'load-path "~/.emacs.d/settings")
-;; path to where plugins are kept
-(setq plugin-path "~/.emacs.d/el-get/")
 
 ;; define various custom functions
 (require 'custom-functions)
@@ -17,7 +15,7 @@
 ;---------------;
 
 ;; Git
-(include-plugin "magit")
+(include-elget-plugin "magit")
 (require 'magit)
 
 ;; Popup
@@ -25,11 +23,11 @@
 (require 'popup)
 
 ;; Websocket
-(include-plugin "websocket")
+(include-elget-plugin "websocket")
 (require 'websocket)
 
 ;; Request
-(include-plugin "request")
+(include-elget-plugin "request")
 (require 'request)
 
 ;; Auto complete
@@ -41,14 +39,19 @@
 ;; Helm
 (require 'helm-settings)
 
-
 ;-----------;
 ;;; Modes ;;;
 ;-----------;
 
 ;; Ido mode
+;; Enable IDO
 (require 'ido)
-(ido-mode 1)
+(ido-mode t)
+(setq ido-enable-flex-matching t)
+
+;; Pig mode
+(include-elget-plugin "pig-mode")
+(require 'pig-settings)
 
 ;; MuMaMo
 (require 'mumamo-settings)
@@ -71,10 +74,9 @@
 ;; Nyancat mode!
 (nyan-mode 1)
 
+;; R development mode
+(require 'r-settings)
 
-;---------------------------------------------------------------------
-;; Put auto 'custom' changes in a separate file (this is stuff like
-;; custom-set-faces and custom-set-variables)
-(load 
- (setq custom-file (expand-file-name "settings/custom.el" user-emacs-directory))
- 'noerror)
+
+
+
