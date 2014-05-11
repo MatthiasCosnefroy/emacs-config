@@ -12,9 +12,9 @@
 (setq
  python-shell-interpreter "ipython"
  python-shell-interpreter-args (if (system-is-mac)
-				   "--gui=osx --matplotlib=osx --colors=Linux"
-                                   (if (system-is-linux)
-				       "--gui=wx --matplotlib=wx --colors=Linux"))
+                                   "--gui=osx --matplotlib=osx --colors=Linux"
+                                 (if (system-is-linux)
+                                     "--gui=wx --matplotlib=wx --colors=Linux"))
  python-shell-prompt-regexp "In \\[[0-9]+\\]: "
  python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
  python-shell-completion-setup-code
@@ -81,22 +81,19 @@
            (local-file (file-relative-name
                         temp-file
                         (file-name-directory buffer-file-name))))
-      (list "pycheckers" (list local-file))))
+      (list "pyflakes" (list local-file))))
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pyflakes-init)))
-(add-hook 'python-mode-hook
-	  (lambda ()
-	    (unless (eq buffer-file-name nil) (flymake-mode 1))))
+(add-hook 'python-mode-hook 'flymake-mode)
 
 ; Set PYTHONPATH, because we don't load .bashrc
 (defun set-python-path-from-shell-PYTHONPATH ()
-  (let ((path-from-shell (shell-command-to-string "$SHELL -i -c 'echo $PYTHONPATH'")))
+  (let ((path-from-shell (shell-command-to-string
+                          "$SHELL -i -c 'echo $PYTHONPATH'")))
     (setenv "PYTHONPATH" path-from-shell)))
-
 (if window-system (set-python-path-from-shell-PYTHONPATH))
-
 (setq auto-mode-alist
-      (append 
+      (append
        (list '("\\.pyx" . python-mode))
        auto-mode-alist))
 
@@ -107,4 +104,3 @@
   '(define-key python-mode-map (kbd "C-c |") 'python-shell-send-region))
 
 (provide 'python-settings)
-

@@ -6,19 +6,19 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (defun install-el-get ()
-  (eval-url  
-   "https://github.com/dimitri/el-get/raw/master/el-get-install.el")) 
+  (eval-url
+   "https://github.com/dimitri/el-get/raw/master/el-get-install.el"))
 
-(unless (require 'el-get nil t)  
+(unless (require 'el-get nil t)
   (install-el-get))
 
 ; extra recipes for packages unknown to el-get (yet)
-(setq el-get-sources  
+(setq el-get-sources
       '((:name pig-mode
                :type git
-               :url "git://github.com/motus/pig-mode.git"  
-               :load "pig-mode.el"  
-               :compile ("pig-mode.el")  
+               :url "git://github.com/motus/pig-mode.git"
+               :load "pig-mode.el"
+               :compile ("pig-mode.el")
                :features pig-mode)
         (:name ess
                :type git
@@ -28,10 +28,10 @@
                :features ess-site)))
 
 ; custom packages to install
-(setq my-elget-packages 
+(setq my-elget-packages
         (append
             (mapcar 'el-get-source-name el-get-sources)
-            '(auctex auto-complete color-theme-solarized ein)  
+            '(auctex auto-complete color-theme-solarized ein)
             '(magit markdown-mode matlab-mode nxhtml pydoc-info)
             '(scss-mode popup jedi nyan-mode helm helm-descbinds)))
 
@@ -41,6 +41,5 @@
 
 ; then intsall!
 (el-get 'sync my-elget-packages)
-      
-(provide 'el-get-settings)
 
+(provide 'el-get-settings)
