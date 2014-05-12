@@ -12,7 +12,13 @@
 
 ; set command key to be meta instead of option
 (if (system-is-mac)
-    (setq ns-command-modifier 'meta))
+    (setq mac-command-modifier 'meta))
+
+; access remove content via SSH
+; just do "C-x C-f //user@remoteserver:remote-path"
+(setq tramp-default-method "ssh")
+; open compressed file automatically
+(auto-compression-mode 1)
 
 ; don't show the startup screen
 (setq inhibit-startup-screen 1)
@@ -27,9 +33,9 @@
 ; turn on mouse wheel support for scrolling
 (require 'mwheel)
 (mouse-wheel-mode 1)
-; show line number
-(global-linum-mode t)
-; show colume number
+; show line and colume number
+(require 'linum)
+(global-linum-mode 1)
 (column-number-mode 1)
 
 ; word wrap at specific column number
