@@ -23,7 +23,7 @@ function doIt() {
 	        gcp -alrf "$i" "$HOME/"
         else
             echo "$i"
-            cp -alrf "$i" "$HOME/"
+            cp -arf "$i" "$HOME/"
         fi
 	fi
     done
