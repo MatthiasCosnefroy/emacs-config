@@ -4,8 +4,9 @@
 
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 (include-elget-plugin "auctex")
-(load "auctex.el" -1 1 1)
-(load "preview-latex.el" -1 1 1)
+(load "auctex.el" nil t t)
+; preview latex quations, referrence, figures etc.
+(load "preview-latex.el" nil t t)
 
 (setq TeX-view-program-list '(("Evince" "evince --page-index=%(outpage) %o")))
 (if (system-is-mac)
@@ -35,10 +36,13 @@
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+
+; reference
+(add-hook 'latex-mode-hook 'turn-on-reftex)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(setq reftex-plug-into-AUCTeX t)
+(setq reftex-plug-into-auctex t)
 
 ; spell checking
 (setq ispell-program-name "aspell")

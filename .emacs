@@ -55,7 +55,7 @@
 ;; Markdown mode
 (require 'markdown-settings)
 
-;; Python mode 
+;; Python mode
 (require 'python-settings)
 
 ;; LaTeX and Auctex
@@ -73,8 +73,5 @@
 ;; R development mode
 (require 'r-settings)
 
-
-
-
-(put 'downcase-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
+;; yaml mode
+(require 'yaml-settings)
