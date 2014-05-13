@@ -29,7 +29,7 @@
                :type git
                :url "git://github.com/emacs-ess/ESS.git"
                :load-path "lisp"
-               ; :build ("make") ; failed on MAC OS
+               :build ("make") ; failed on MAC OS
                :features ess-site)
         (:name yaml-mode
                :type git
