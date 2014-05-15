@@ -24,6 +24,10 @@
   (interactive)
   (string-equal system-type "gnu/linux"))
 
+(defun system-is-windows()
+  (interactive)
+  (string-equal system-type "windows-nt"))
+
 (defun create-directory (dir)
   (unless (file-exists-p dir)
     (make-directory dir)))
