@@ -40,13 +40,13 @@
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 
-; enable pdf mode by default
+; enable pdf mode (pdflatex) by default
 (setq TeX-PDF-mode t)
-; custome pdflatex command with -shell-escape option.
+; custome LaTex command with -shell-escape option.
 ; useful for converting eps to pdf
 (eval-after-load "tex"
   '(add-to-list 'TeX-command-list
-                '("LaTeXescape" "%`%l -shell-escape  %(mode)%' %t"
+                '("LaTeX" "%`%l -shell-escape  %(mode)%' %t"
                   TeX-run-command nil t)))
 
 ; always start the server for inverse search
