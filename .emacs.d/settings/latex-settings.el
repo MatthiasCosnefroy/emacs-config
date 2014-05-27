@@ -19,7 +19,8 @@
         ("Skim"
          (concat
           "/Applications/Skim.app/Contents/SharedSupport/displayline"
-          " %n %o %b")))) ; mac
+          " %n %o %b")) ; mac
+        ))
 
 ; basic configuration
 (setq TeX-auto-save t)

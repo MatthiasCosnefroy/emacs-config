@@ -22,8 +22,8 @@
 
 ; don't show the startup screen
 (setq inhibit-startup-screen 1)
-; show the menu bar
-(menu-bar-mode 1)
+; don't show the menu bar
+(menu-bar-mode 0)
 ; don't show the tool bar
 (require 'tool-bar)
 (tool-bar-mode 0)
@@ -59,7 +59,7 @@
 
 ; default window width and height
 (defun custom-set-frame-size ()
-  (add-to-list 'default-frame-alist '(height . 38))
+  (add-to-list 'default-frame-alist '(height . 40))
   (add-to-list 'default-frame-alist '(width . 88)))
 (custom-set-frame-size)
 (add-hook 'before-make-frame-hook 'custom-set-frame-size)

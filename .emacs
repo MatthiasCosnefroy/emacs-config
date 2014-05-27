@@ -75,3 +75,4 @@
 
 ;; yaml mode
 (require 'yaml-settings)
+(put 'upcase-region 'disabled nil)

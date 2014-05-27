@@ -40,9 +40,10 @@
 (setq my-elget-packages
         (append
             (mapcar 'el-get-source-name el-get-sources)
-            '(auctex auto-complete color-theme-solarized ein)
+            '(auto-complete auctex color-theme-solarized ein)
             '(magit markdown-mode matlab-mode nxhtml pydoc-info)
-            '(scss-mode popup jedi nyan-mode helm helm-descbinds)))
+            '(scss-mode popup jedi nyan-mode helm helm-descbinds)
+            ))
 
 ; first enable shallow clone, so we don't need to clone the entire
 ; history of every project
