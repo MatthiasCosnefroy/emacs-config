@@ -72,8 +72,10 @@
 
 ; always use spaces, not tabs, when indenting
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
 ; indentation styles
-(setq c-basic-offset 8)
+(setq c-basic-offset 4)
 (setq c-default-style (quote (
     (c-mode . "bsd")
     (java-mode . "java")

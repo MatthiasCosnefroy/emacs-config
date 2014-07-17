@@ -41,8 +41,8 @@
         (append
             (mapcar 'el-get-source-name el-get-sources)
             '(auto-complete auctex color-theme-solarized ein)
-            '(magit markdown-mode matlab-mode nxhtml pydoc-info)
-            '(scss-mode popup jedi nyan-mode helm helm-descbinds)
+            '(markdown-mode scss-mode helm helm-descbinds pydoc-info)
+            ;;'(magit matlab-mode nyan-mode nxhtml jedi popup)
             ))
 
 ; first enable shallow clone, so we don't need to clone the entire

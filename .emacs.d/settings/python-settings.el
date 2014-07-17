@@ -5,9 +5,12 @@
 ;; -----------------------
 ;; python.el configuration
 ;; -----------------------
-
 ; from python.el
 (require 'python)
+
+;; set indent level
+(add-hook 'python-mode-hook '(lambda ()
+ (setq python-indent 4)))
 
 (setq
  python-shell-interpreter "ipython"
@@ -36,9 +39,9 @@
 ; set python console args
 (setq ein:console-args
       (if (system-is-mac)
-	  '("--gui=osx" "--matplotlib=osx" "--colors=Linux")
-	(if (system-is-linux)
-	    '("--gui=wx" "--matplotlib=wx" "--colors=Linux"))))
+          '("--gui=osx" "--matplotlib=osx" "--colors=Linux")
+        (if (system-is-linux)
+            '("--gui=wx" "--matplotlib=wx" "--colors=Linux"))))
 
 ; timeout settings
 (setq ein:query-timeout 1000)
@@ -48,7 +51,7 @@
 (require 'ein)
 
 ; shortcut function to load notebooklist
-(defun load-ein () 
+(defun load-ein ()
   (ein:notebooklist-load)
   (interactive)
   (ein:notebooklist-open))

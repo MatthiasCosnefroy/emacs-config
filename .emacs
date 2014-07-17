@@ -14,22 +14,6 @@
 ;;; Utilities ;;;
 ;---------------;
 
-;; Git
-(include-elget-plugin "magit")
-(require 'magit)
-
-;; Popup
-(include-elget-plugin "popup")
-(require 'popup)
-
-;; Websocket
-(include-elget-plugin "websocket")
-(require 'websocket)
-
-;; Request
-(include-elget-plugin "request")
-(require 'request)
-
 ;; Auto complete
 (require 'auto-complete-settings)
 
@@ -38,6 +22,22 @@
 
 ;; Helm
 (require 'helm-settings)
+
+;; Git
+;; (include-elget-plugin "magit")
+;; (require 'magit)
+
+;; Popup
+;; (include-elget-plugin "popup")
+;; (require 'popup)
+
+;; Websocket
+;; (include-elget-plugin "websocket")
+;; (require 'websocket)
+
+;; Request
+;; (include-elget-plugin "request")
+;; (require 'request)
 
 ;-----------;
 ;;; Modes ;;;
@@ -48,9 +48,6 @@
 
 ;; Pig mode
 (require 'pig-settings)
-
-;; MuMaMo
-(require 'mumamo-settings)
 
 ;; Markdown mode
 (require 'markdown-settings)
@@ -64,15 +61,18 @@
 ;; SCSS Mode
 (require 'scss-settings)
 
-;; Matlab mode
-(require 'matlab-settings)
-
-;; Nyancat mode!
-(nyan-mode 1)
-
 ;; R development mode
 (require 'r-settings)
 
 ;; yaml mode
 (require 'yaml-settings)
 (put 'upcase-region 'disabled nil)
+
+;; MuMaMo
+;; (require 'mumamo-settings)
+
+;; Matlab mode
+;; (require 'matlab-settings)
+
+;; Nyancat mode!
+;; (nyan-mode 1)
