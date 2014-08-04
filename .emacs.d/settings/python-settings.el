@@ -8,6 +8,10 @@
 ; from python.el
 (require 'python)
 
+; pydoc info
+;;(include-elget-plugin "pydoc-info-0.2")
+;;(require 'pydoc-info)
+
 ;; set indent level
 (add-hook 'python-mode-hook '(lambda ()
  (setq python-indent 4)))
@@ -26,6 +30,22 @@
    "';'.join(module_completion('''%s'''))\n"
  python-shell-completion-string-code
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+
+;; -----------------------------
+;; pyflakes flymake config
+;; -----------------------------
+;; http://stackoverflow.com/a/1257306/347942
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name))))
+(list "pyflakes" (list local-file))))
+  (add-to-list 'flymake-allowed-file-name-masks
+               '("\\.py\\'" flymake-pyflakes-init)))
+(add-hook 'python-mode-hook 'flymake-mode)
 
 
 ;; -----------------------------
@@ -61,10 +81,6 @@
 ;; misc python config
 ;; ------------------
 
-; pydoc info
-;;(include-elget-plugin "pydoc-info-0.2")
-;;(require 'pydoc-info)
-
 ;; ; jedi python completion
 ;; (include-elget-plugin "ctable")   ; required for epc
 ;; (include-elget-plugin "deferred") ; required for epc
@@ -74,20 +90,6 @@
 ;; (setq jedi:setup-keys t)
 ;; (autoload 'jedi:setup "jedi" nil t)
 ;; (add-hook 'python-mode-hook 'jedi:setup)
-
-;; pyflakes flymake integration
-;; http://stackoverflow.com/a/1257306/347942
-(when (load "flymake" t)
-  (defun flymake-pyflakes-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
-           (local-file (file-relative-name
-                        temp-file
-                        (file-name-directory buffer-file-name))))
-      (list "pyflakes" (list local-file))))
-  (add-to-list 'flymake-allowed-file-name-masks
-               '("\\.py\\'" flymake-pyflakes-init)))
-(add-hook 'python-mode-hook 'flymake-mode)
 
 ; Set PYTHONPATH, because we don't load .bashrc
 (defun set-python-path-from-shell-PYTHONPATH ()
