@@ -33,28 +33,28 @@
 ;; -----------------------------
 
 ; use autocompletion, but don't start to autocomplete after a dot
-(setq ein:complete-on-dot -1)
-(setq ein:use-auto-complete 1)
+;;(setq ein:complete-on-dot -1)
+;;(setq ein:use-auto-complete 1)
 
 ; set python console args
-(setq ein:console-args
-      (if (system-is-mac)
-          '("--gui=osx" "--matplotlib=osx" "--colors=Linux")
-        (if (system-is-linux)
-            '("--gui=wx" "--matplotlib=wx" "--colors=Linux"))))
+;;(setq ein:console-args
+;;      (if (system-is-mac)
+;;          '("--gui=osx" "--matplotlib=osx" "--colors=Linux")
+;;        (if (system-is-linux)
+;;           '("--gui=wx" "--matplotlib=wx" "--colors=Linux"))))
 
 ; timeout settings
-(setq ein:query-timeout 1000)
+;;(setq ein:query-timeout 1000)
 
 ; IPython notebook
-(include-elget-plugin "emacs-ipython-notebook/lisp")
-(require 'ein)
+;;(include-elget-plugin "emacs-ipython-notebook/lisp")
+;;(require 'ein)
 
 ; shortcut function to load notebooklist
-(defun load-ein ()
-  (ein:notebooklist-load)
-  (interactive)
-  (ein:notebooklist-open))
+;;(defun load-ein ()
+;;  (ein:notebooklist-load)
+;;  (interactive)
+;;  (ein:notebooklist-open))
 
 
 ;; ------------------
@@ -62,8 +62,8 @@
 ;; ------------------
 
 ; pydoc info
-(include-elget-plugin "pydoc-info-0.2")
-(require 'pydoc-info)
+;;(include-elget-plugin "pydoc-info-0.2")
+;;(require 'pydoc-info)
 
 ;; ; jedi python completion
 ;; (include-elget-plugin "ctable")   ; required for epc
