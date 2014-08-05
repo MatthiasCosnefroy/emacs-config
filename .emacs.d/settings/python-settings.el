@@ -56,24 +56,23 @@
 ;;  (interactive)
 ;;  (ein:notebooklist-open))
 
-
 ;; ------------------
 ;; misc python config
 ;; ------------------
 
 ; jedi python completion
-(include-elget-plugin "ctable")   ; required for epc
-(include-elget-plugin "deferred") ; required for epc
-(include-elget-plugin "epc")      ; required for jedi
-(include-elget-plugin "jedi")
-(require 'jedi)
-(setq jedi:setup-keys t)
-(autoload 'jedi:setup "jedi" nil t)
-(add-hook 'python-mode-hook 'jedi:setup)
+;; (include-elget-plugin "ctable")   ; required for epc
+;; (include-elget-plugin "deferred") ; required for epc
+;; (include-elget-plugin "epc")      ; required for jedi
+;; (include-elget-plugin "jedi")
+;; (require 'jedi)
+;; (setq jedi:setup-keys t)
+;; (autoload 'jedi:setup "jedi" nil t)
+;; (add-hook 'python-mode-hook 'jedi:setup)
 
 ; pydoc info
-(include-elget-plugin "pydoc-info-0.2")
-(require 'pydoc-info)
+;; (include-elget-plugin "pydoc-info-0.2")
+;; (require 'pydoc-info)
 
 ; Set PYTHONPATH, because we don't load .bashrc
 (defun set-python-path-from-shell-PYTHONPATH ()

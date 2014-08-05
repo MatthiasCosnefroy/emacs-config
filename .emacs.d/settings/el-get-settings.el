@@ -37,7 +37,7 @@
                :type git
                :url "git://github.com/yoshiki/yaml-mode.git"
                :features yaml-mode)
-	))
+        ))
 
 ; custom packages to install
 (setq my-elget-packages
@@ -54,8 +54,8 @@
          color-theme    ; nice looking emacs
          color-theme-tango      ; check out color-theme-solarized
          color-theme-solarized  ; the solarized color theme
-         jedi           ; general Python support
-         pydoc-info     ; Python documentation
+         ;jedi           ; general Python support
+         ;pydoc-info     ; Python documentation
          ;magit          ; git plugin
          ;matlab-mode    ; support Matlab files
          ;nyan-mode      ; silly mode that renders a nyan cat
