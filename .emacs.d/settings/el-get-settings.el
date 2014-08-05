@@ -2,20 +2,22 @@
 (setq elget-path "~/.emacs.d/el-get/")
 (create-directory elget-path)
 
+; utility to concat plugin path
 (defun make-elget-path (plugin)
   (expand-file-name
    (concat elget-path plugin)))
 
+; add plugin to loading path
 (defun include-elget-plugin (plugin)
   (add-to-list 'load-path (make-elget-path plugin)))
 
+; install el-get itself
 (defun install-el-get ()
   (eval-url
    "https://github.com/dimitri/el-get/raw/master/el-get-install.el"))
 
 ; add el-get to the load path, and install it if it doesn't exist
 (include-elget-plugin "el-get")
-
 (unless (require 'el-get nil t)
   (install-el-get))
 
@@ -29,24 +31,41 @@
                :type git
                :url "git://github.com/emacs-ess/ESS.git"
                :load-path "lisp"
-               :build ("make") ; failed on MAC OS
+               :build ("make")
                :features ess-site)
         (:name yaml-mode
                :type git
                :url "git://github.com/yoshiki/yaml-mode.git"
-               :features yaml-mode)))
+               :features yaml-mode)
+	))
 
 ; custom packages to install
 (setq my-elget-packages
-        (append
-            (mapcar 'el-get-source-name el-get-sources)
-            '(auto-complete auctex color-theme-solarized ein)
-            '(markdown-mode scss-mode helm helm-descbinds)
-            ;;'(magit matlab-mode nyan-mode nxhtml jedi popup pydoc-info)
-            ))
-
-; first enable shallow clone, so we don't need to clone the entire
-; history of every project
+      (append
+       (mapcar 'el-get-source-name el-get-sources)
+       '(auto-complete  ; auto completion
+         auctex         ; LaTeX plugin
+         ein            ; IPython notebook plugin
+         markdown-mode  ; support for Markdown files
+         scss-mode      ; support for SCSS files
+         helm           ; completion and selection narrowing framework
+         helm-descbinds ; describe keybindings using helm
+         switch-window  ; takes over C-x o
+         color-theme    ; nice looking emacs
+         color-theme-tango      ; check out color-theme-solarized
+         color-theme-solarized  ; the solarized color theme
+         jedi           ; general Python support
+         pydoc-info     ; Python documentation
+         ;magit          ; git plugin
+         ;matlab-mode    ; support Matlab files
+         ;nyan-mode      ; silly mode that renders a nyan cat
+         ;nxhtml         ; MuMaMo
+         ;popup          ; visual popup (e.g., for auto completion)
+         )))
+;
+;; first enable shallow clone, so we don't need to clone the entire
+;; history of every project
+;;
 (setq el-get-git-shallow-clone t)
 
 ; then intsall!

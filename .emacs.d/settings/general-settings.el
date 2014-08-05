@@ -2,7 +2,10 @@
 ;;; General or Global Settings ;;;
 ;--------------------------------;
 
-; set PATH, because we don't load .bashrc
+;
+;; Systems
+;;
+;; set PATH, because we don't load .bashrc
 (if window-system (set-exec-path-from-shell-PATH))
 
 ; language
@@ -17,60 +20,20 @@
 ; access remove content via SSH
 ; just do "C-x C-f //user@remoteserver:remote-path"
 (setq tramp-default-method "ssh")
+
 ; open compressed file automatically
 (auto-compression-mode 1)
 
-; don't show the startup screen
-(setq inhibit-startup-screen 1)
-; don't show the menu bar
-(menu-bar-mode 0)
-; don't show the tool bar
-(require 'tool-bar)
-(tool-bar-mode 0)
-; don't show the scroll bar
-(if window-system (scroll-bar-mode 0))
+; disable backup
+(setq backup-inhibited t)
 
-; turn on mouse wheel support for scrolling
-(require 'mwheel)
-(mouse-wheel-mode 1)
-; show line and colume number
-(require 'linum)
-(global-linum-mode 1)
-(column-number-mode 1)
+; disable auto save
+(setq auto-save-default nil)
 
-; word wrap at specific column number
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
-(add-hook 'text-mode-hook
-  '(lambda() (set-fill-column 79)))
-; wrap line respecting words
-(global-visual-line-mode t)
-
-; highlight lines that go beyond thw columnus limit
-(require 'whitespace)
-(setq whitespace-style '(face empty tabs lines-tail trailing))
-(global-whitespace-mode t)
-(setq whitespace-line-column 79)
-
-; each line of text gets one line on the screen (i.e., text will run off
-; the left instead of wrapping around onto a new line)
-;(setq-default truncate-lines 0)
-; truncate lines even in partial-width windows
-;(setq truncate-partial-width-windows 0)
-
-; default window width and height
-(defun custom-set-frame-size ()
-  (add-to-list 'default-frame-alist '(height . 40))
-  (add-to-list 'default-frame-alist '(width . 88)))
-(custom-set-frame-size)
-(add-hook 'before-make-frame-hook 'custom-set-frame-size)
-
-; window modifications
-;(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-;(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-;(global-set-key (kbd "S-C-<down>") 'shrink-window)
-;(global-set-key (kbd "S-C-<up>") 'enlarge-window)
-
-; always use spaces, not tabs, when indenting
+;
+;; Edit
+;;
+;; always use spaces, not tabs, when indenting
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
@@ -90,39 +53,59 @@
 
 ; require final newlines in files when they are saved
 (setq require-final-newline nil)
+
 ; add a new line when going to the next line
 (setq next-line-add-newlines nil)
 
-; show the current line and column numbers in the stats bar as well
-(line-number-mode 1)
-(column-number-mode 1)
+;
+;; Windows
+;;
+;; default window width and height
+(defun custom-set-frame-size ()
+  (add-to-list 'default-frame-alist '(height . 40))
+  (add-to-list 'default-frame-alist '(width . 88)))
+(custom-set-frame-size)
+(add-hook 'before-make-frame-hook 'custom-set-frame-size)
+
+; window modifications
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 ; don't blink the cursor
-;(blink-cursor-mode 0)
+(blink-cursor-mode 0)
+
+; don't show the startup screen
+(setq inhibit-startup-screen 1)
+
+; don't show the menu bar
+(menu-bar-mode 0)
+
+; don't show the scroll bar
+(if window-system (scroll-bar-mode 0))
 
 ; make sure transient mark mode is enabled (it should be by default,
 ; but just in case)
 (transient-mark-mode 1)
 
-; highlight parentheses when the cursor is next to them
-(require 'paren)
-(show-paren-mode 1)
-
-; text decoration
-(require 'font-lock)
-;(setq font-lock-maximum-decoration 1)
-(global-font-lock-mode 1)
-(global-hi-lock-mode nil)
-(setq jit-lock-contextually 1)
-(setq jit-lock-stealth-verbose 1)
-
 ; if there is size information associated with text, change the text
 ; size to reflect it
 (size-indication-mode 1)
 
-; disable backup
-(setq backup-inhibited t)
-; disable auto save
-(setq auto-save-default nil)
+; word wrap at specific column number
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'text-mode-hook
+  '(lambda() (set-fill-column 79)))
+
+; wrap line respecting words
+(global-visual-line-mode t)
+
+; each line of text gets one line on the screen (i.e., text will run off
+; the left instead of wrapping around onto a new line)
+;(setq-default truncate-lines 0)
+
+; truncate lines even in partial-width windows
+;(setq truncate-partial-width-windows 0)
 
 (provide 'general-settings)

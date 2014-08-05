@@ -8,49 +8,29 @@
 ; from python.el
 (require 'python)
 
-; pydoc info
-;;(include-elget-plugin "pydoc-info-0.2")
-;;(require 'pydoc-info)
-
 ;; set indent level
 (add-hook 'python-mode-hook '(lambda ()
  (setq python-indent 4)))
 
-(setq
- python-shell-interpreter "ipython"
- python-shell-interpreter-args (if (system-is-mac)
-                                   "--gui=osx --matplotlib=osx --colors=Linux"
-                                 (if (system-is-linux)
-                                     "--gui=wx --matplotlib=wx --colors=Linux"))
- python-shell-prompt-regexp "In \\[[0-9]+\\]: "
- python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
- python-shell-completion-setup-code
-   "from IPython.core.completerlib import module_completion"
- python-shell-completion-module-string-code
-   "';'.join(module_completion('''%s'''))\n"
- python-shell-completion-string-code
-   "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+;; -----------------------------
+;; emacs IPython/notebook config
+;; -----------------------------
 
-;; -----------------------------
-;; pyflakes flymake config
-;; -----------------------------
-;; http://stackoverflow.com/a/1257306/347942
-(when (load "flymake" t)
-  (defun flymake-pyflakes-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
-           (local-file (file-relative-name
-                        temp-file
-                        (file-name-directory buffer-file-name))))
-(list "pyflakes" (list local-file))))
-  (add-to-list 'flymake-allowed-file-name-masks
-               '("\\.py\\'" flymake-pyflakes-init)))
-(add-hook 'python-mode-hook 'flymake-mode)
-
-
-;; -----------------------------
-;; emacs IPython notebook config
-;; -----------------------------
+; set ipython env.
+;;(setq
+;; python-shell-interpreter "ipython"
+;; python-shell-interpreter-args (if (system-is-mac)
+;;                                   "--gui=osx --matplotlib=osx --colors=Linux"
+;;                                 (if (system-is-linux)
+;;                                     "--gui=wx --matplotlib=wx --colors=Linux"))
+;; python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+;; python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+;; python-shell-completion-setup-code
+;;   "from IPython.core.completerlib import module_completion"
+;; python-shell-completion-module-string-code
+;;   "';'.join(module_completion('''%s'''))\n"
+;; python-shell-completion-string-code
+;;   "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
 ; use autocompletion, but don't start to autocomplete after a dot
 ;;(setq ein:complete-on-dot -1)
@@ -81,15 +61,19 @@
 ;; misc python config
 ;; ------------------
 
-;; ; jedi python completion
-;; (include-elget-plugin "ctable")   ; required for epc
-;; (include-elget-plugin "deferred") ; required for epc
-;; (include-elget-plugin "epc")      ; required for jedi
-;; (include-elget-plugin "jedi")
-;; (require 'jedi)
-;; (setq jedi:setup-keys t)
-;; (autoload 'jedi:setup "jedi" nil t)
-;; (add-hook 'python-mode-hook 'jedi:setup)
+; jedi python completion
+(include-elget-plugin "ctable")   ; required for epc
+(include-elget-plugin "deferred") ; required for epc
+(include-elget-plugin "epc")      ; required for jedi
+(include-elget-plugin "jedi")
+(require 'jedi)
+(setq jedi:setup-keys t)
+(autoload 'jedi:setup "jedi" nil t)
+(add-hook 'python-mode-hook 'jedi:setup)
+
+; pydoc info
+(include-elget-plugin "pydoc-info-0.2")
+(require 'pydoc-info)
 
 ; Set PYTHONPATH, because we don't load .bashrc
 (defun set-python-path-from-shell-PYTHONPATH ()
@@ -101,6 +85,20 @@
       (append
        (list '("\\.pyx" . python-mode))
        auto-mode-alist))
+
+; pyflakes
+;; http://stackoverflow.com/a/1257306/347942
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name))))
+(list "pyflakes" (list local-file))))
+  (add-to-list 'flymake-allowed-file-name-masks
+               '("\\.py\\'" flymake-pyflakes-init)))
+(add-hook 'python-mode-hook 'flymake-mode)
 
 ; keybindings
 (eval-after-load 'python
