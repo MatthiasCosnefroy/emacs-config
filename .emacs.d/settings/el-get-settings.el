@@ -37,6 +37,10 @@
                :type git
                :url "git://github.com/yoshiki/yaml-mode.git"
                :features yaml-mode)
+        (:name zotelo
+               :type git
+               :url "git@github.com:vitoshka/zotelo.git"
+               :features zotelo)
         ))
 
 ; custom packages to install

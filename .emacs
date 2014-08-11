@@ -10,5 +10,8 @@
 ;; install dependencies with el-get
 (require 'el-get-settings)
 
+;; Install dependencies via MELPA
+(require 'melpa-settings)
+
 ;; configure/load emacs package settings
-(require 'load-settings)
+(require 'init-settings)

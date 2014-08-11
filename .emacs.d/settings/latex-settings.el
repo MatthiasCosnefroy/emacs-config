@@ -83,4 +83,8 @@
                     (output-pdf "Evince")
                     (output-html "xdg-open"))))))
 
+;; Support Zotero library with zotelo.el
+(require 'zotelo)
+(add-hook 'TeX-mode-hook 'zotelo-minor-mode)
+
 (provide 'latex-settings)

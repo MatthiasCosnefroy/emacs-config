@@ -100,4 +100,4 @@
 ;; Nyancat mode!
 ;; (nyan-mode 1)
 
-(provide 'load-settings)
+(provide 'init-settings)
