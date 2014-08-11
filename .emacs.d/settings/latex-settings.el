@@ -86,6 +86,7 @@
 ;; Support Zotero library with zotelo.el
 (require 'zotelo)
 (add-hook 'TeX-mode-hook 'zotelo-minor-mode)
-(setq zotelo--auto-update-is-on t)
+; Auto update of zotero libraries
+;;(setq zotelo--auto-update-is-on t)
 
 (provide 'latex-settings)
