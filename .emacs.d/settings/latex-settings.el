@@ -1,4 +1,3 @@
-
 ;-----------;
 ;;; LaTeX ;;;
 ;-----------;
@@ -10,8 +9,7 @@
 
 ; preview latex quations, referrence, figures etc.
 (load "preview-latex.el" nil t t)
-
-; set view programs
+; set preview programs
 (setq TeX-view-program-list
       '(("SumatraPDF" "SumatraPDF.exe %o") ; windows
         ("Gsview" "gsview32.exe %o") ; windows
@@ -33,9 +31,9 @@
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'linum-mode)
 
-; reference
+; start reftex
+(setq reftex-plug-into-aucteX t)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(setq reftex-plug-into-auctex t)
 
 ; spell checking
 (setq ispell-program-name "aspell")
@@ -45,6 +43,7 @@
 
 ; enable pdf mode (pdflatex) by default
 (setq TeX-PDF-mode t)
+
 ; custome LaTex command with -shell-escape option.
 ; useful for converting eps to pdf
 (eval-after-load "tex"
@@ -89,6 +88,6 @@
 (require 'zotelo)
 (add-hook 'TeX-mode-hook 'zotelo-minor-mode)
 ; Auto update of zotero libraries
-;;(setq zotelo--auto-update-is-on t)
+;(setq zotelo--auto-update-is-on t)
 
 (provide 'latex-settings)
