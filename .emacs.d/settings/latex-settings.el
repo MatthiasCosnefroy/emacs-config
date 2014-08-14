@@ -1,3 +1,4 @@
+
 ;-----------;
 ;;; LaTeX ;;;
 ;-----------;
@@ -6,6 +7,7 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 (include-elget-plugin "auctex")
 (load "auctex.el" nil t t)
+
 ; preview latex quations, referrence, figures etc.
 (load "preview-latex.el" nil t t)
 
