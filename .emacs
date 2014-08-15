@@ -14,4 +14,4 @@
 (require 'melpa-settings)
 
 ;; configure/load emacs package settings
-(require 'init-settings)
+(require 'init)

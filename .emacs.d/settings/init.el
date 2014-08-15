@@ -46,6 +46,9 @@
 ;; Helm
 (require 'helm-settings)
 
+;; rpg-dictionary
+(require 'rpg-dictionary)
+
 ;; Git
 ;; (include-elget-plugin "magit")
 ;; (require 'magit)
@@ -100,4 +103,4 @@
 ;; Nyancat mode!
 ;; (nyan-mode 1)
 
-(provide 'init-settings)
+(provide 'init)
