@@ -77,6 +77,7 @@
 
 ; predictive mode
 (include-elget-plugin "predictive")
+(include-elget-plugin "predictive/latex")
 (require 'predictive)
 (autoload 'predictive-mode "predictive" "predictive" t)
 (add-hook 'LaTeX-mode-hook 'predictive-mode)

@@ -27,12 +27,6 @@
                :type git
                :url "git://github.com/motus/pig-mode.git"
                :features pig-mode)
-        (:name ess
-               :type git
-               :url "git://github.com/emacs-ess/ESS.git"
-               :load-path "lisp"
-               :build ("make")
-               :features ess-site)
         (:name yaml-mode
                :type git
                :url "git://github.com/yoshiki/yaml-mode.git"
@@ -41,10 +35,13 @@
                :type git
                :url "git@github.com:vitoshka/zotelo.git"
                :features zotelo)
-        (:name auto-complete-auctex
-               :type git
-               :url "git@github.com:monsanto/auto-complete-auctex.git"
-               :features auto-complete-auctex)
+        (:name yasnippet
+              :website "https://github.com/capitaomorte/yasnippet.git"
+              :description "YASnippet is a template system for Emacs."
+              :type github
+              :pkgname "capitaomorte/yasnippet"
+              :features "yasnippet"
+              :compile "yasnippet.el")
         ))
 
 ; custom packages to install
@@ -53,7 +50,9 @@
        (mapcar 'el-get-source-name el-get-sources)
        '(auto-complete  ; auto completion
          auctex         ; LaTeX plugin
+         auto-complete-auctex   ; auctex mode completion
          ein            ; IPython notebook plugin
+         ess            ; Emacs speaks statistics
          markdown-mode  ; support for Markdown files
          scss-mode      ; support for SCSS files
          helm           ; completion and selection narrowing framework
