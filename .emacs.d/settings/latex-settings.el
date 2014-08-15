@@ -7,21 +7,6 @@
 (include-elget-plugin "auctex")
 (load "auctex.el" nil t t)
 
-; preview latex quations, referrence, figures etc.
-(load "preview-latex.el" nil t t)
-; set preview programs
-(setq TeX-view-program-list
-      '(("SumatraPDF" "SumatraPDF.exe %o") ; windows
-        ("Gsview" "gsview32.exe %o") ; windows
-        ("Okular" "okular --unique %o")
-        ("Evince" "evince --page-index=%(outpage) %o")
-        ("Firefox" "firefox %o")
-        ("Skim"
-         (concat
-          "/Applications/Skim.app/Contents/SharedSupport/displayline"
-          " %n %o %b")) ; mac
-        ))
-
 ; basic configuration
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
@@ -31,15 +16,26 @@
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'linum-mode)
 
-; start reftex
-(setq reftex-plug-into-aucteX t)
+; start reftex-mode
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
 
 ; spell checking
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "english")
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
+
+; predictive mode
+;;(require 'predictive)
+;;(autoload 'predictive-mode "predictive" "predictive" t)
+;; (add-hook 'LaTeX-mode-hook 'predictive-mode)
+;; (set-default 'predictive-auto-add-to-dict t)
+;; (setq predictive-main-dict 'rpg-dictionary
+;;       predictive-auto-learn t
+;;       predictive-add-to-dict-ask nil
+;;       predictive-use-auto-learn-cache nil
+;;       predictive-which-dict t)
 
 ; enable pdf mode (pdflatex) by default
 (setq TeX-PDF-mode t)
@@ -55,16 +51,20 @@
 (setq TeX-source-correlate-mode t)
 (setq-default TeX-source-correlate-start-server t)
 
-; predictive mode
-;;(require 'predictive)
-;;(autoload 'predictive-mode "predictive" "predictive" t)
-;; (add-hook 'LaTeX-mode-hook 'predictive-mode)
-;; (set-default 'predictive-auto-add-to-dict t)
-;; (setq predictive-main-dict 'rpg-dictionary
-;;       predictive-auto-learn t
-;;       predictive-add-to-dict-ask nil
-;;       predictive-use-auto-learn-cache nil
-;;       predictive-which-dict t)
+; preview latex quations, referrence, figures etc.
+(load "preview-latex.el" nil t t)
+; set preview programs
+(setq TeX-view-program-list
+      '(("SumatraPDF" "SumatraPDF.exe %o") ; windows
+        ("Gsview" "gsview32.exe %o") ; windows
+        ("Okular" "okular --unique %o")
+        ("Evince" "evince --page-index=%(outpage) %o")
+        ("Firefox" "firefox %o")
+        ("Skim"
+         (concat
+          "/Applications/Skim.app/Contents/SharedSupport/displayline"
+          " %n %o %b")) ; mac
+        ))
 
 ; System specific settings
 (if (system-is-mac)
