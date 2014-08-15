@@ -41,6 +41,10 @@
                :type git
                :url "git@github.com:vitoshka/zotelo.git"
                :features zotelo)
+        (:name auto-complete-auctex
+               :type git
+               :url "git@github.com:monsanto/auto-complete-auctex.git"
+               :features auto-complete-auctex)
         ))
 
 ; custom packages to install
@@ -55,9 +59,8 @@
          helm           ; completion and selection narrowing framework
          helm-descbinds ; describe keybindings using helm
          switch-window  ; takes over C-x o
-         color-theme    ; nice looking emacs
-         color-theme-tango      ; check out color-theme-solarized
          color-theme-solarized  ; the solarized color theme
+         predictive     ; predictive-mode for AUCTeX
          ;jedi           ; general Python support
          ;pydoc-info     ; Python documentation
          ;magit          ; git plugin

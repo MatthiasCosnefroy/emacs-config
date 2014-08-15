@@ -12,8 +12,8 @@
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
+;(add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
-(add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'linum-mode)
 
 ; start reftex-mode
@@ -26,19 +26,10 @@
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 
-; predictive mode
-;;(require 'predictive)
-;;(autoload 'predictive-mode "predictive" "predictive" t)
-;; (add-hook 'LaTeX-mode-hook 'predictive-mode)
-;; (set-default 'predictive-auto-add-to-dict t)
-;; (setq predictive-main-dict 'rpg-dictionary
-;;       predictive-auto-learn t
-;;       predictive-add-to-dict-ask nil
-;;       predictive-use-auto-learn-cache nil
-;;       predictive-which-dict t)
-
 ; enable pdf mode (pdflatex) by default
-(setq TeX-PDF-mode t)
+(setq TeX-PDF-mode t) ; OR
+;; (require 'tex)
+;; (TeX-global-PDF-mode t)
 
 ; custome LaTex command with -shell-escape option.
 ; useful for converting eps to pdf
@@ -84,10 +75,24 @@
                     (output-pdf "Evince")
                     (output-html "xdg-open"))))))
 
+; predictive mode
+(include-elget-plugin "predictive")
+(require 'predictive)
+(autoload 'predictive-mode "predictive" "predictive" t)
+(add-hook 'LaTeX-mode-hook 'predictive-mode)
+(set-default 'predictive-auto-add-to-dict t)
+(setq predictive-main-dict 'rpg-dictionary
+      predictive-auto-learn t
+      predictive-add-to-dict-ask nil
+      predictive-use-auto-learn-cache nil
+      predictive-which-dict t)
+
 ;; Support Zotero library with zotelo.el
 (require 'zotelo)
 (add-hook 'TeX-mode-hook 'zotelo-minor-mode)
-; Auto update of zotero libraries
-;(setq zotelo--auto-update-is-on t)
+; (setq zotelo--auto-update-is-on t)
+
+; A pretty interface to auctex completions
+(require 'auto-complete-auctex)
 
 (provide 'latex-settings)
