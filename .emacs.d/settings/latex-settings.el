@@ -76,17 +76,18 @@
                     (output-html "xdg-open"))))))
 
 ; predictive mode
-(include-elget-plugin "predictive")
-(include-elget-plugin "predictive/latex")
-(require 'predictive)
-(autoload 'predictive-mode "predictive" "predictive" t)
-(add-hook 'LaTeX-mode-hook 'predictive-mode)
-(set-default 'predictive-auto-add-to-dict t)
-(setq predictive-main-dict 'rpg-dictionary
-      predictive-auto-learn t
-      predictive-add-to-dict-ask nil
-      predictive-use-auto-learn-cache nil
-      predictive-which-dict t)
+;(require 'rpg-dictionary)
+;(include-elget-plugin "predictive")
+;(include-elget-plugin "predictive/latex")
+;(require 'predictive)
+;(autoload 'predictive-mode "predictive" "predictive" t)
+;(add-hook 'LaTeX-mode-hook 'predictive-mode)
+;(set-default 'predictive-auto-add-to-dict t)
+;(setq predictive-main-dict 'rpg-dictionary
+;      predictive-auto-learn t
+;      predictive-add-to-dict-ask nil
+;      predictive-use-auto-learn-cache nil
+;      predictive-which-dict t)
 
 ;; Support Zotero library with zotelo.el
 (require 'zotelo)

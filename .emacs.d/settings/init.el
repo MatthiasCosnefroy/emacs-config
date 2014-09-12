@@ -37,17 +37,14 @@
 (setq jit-lock-contextually 1)
 (setq jit-lock-stealth-verbose 1)
 
-;; Auto complete
+; Auto complete
 (require 'auto-complete-settings)
 
-;; Camelcase functions
+; Camelcase functions
 (require 'camelcase-settings)
 
-;; Helm
+; Helm
 (require 'helm-settings)
-
-;; rpg-dictionary
-(require 'rpg-dictionary)
 
 ;; Git
 ;; (include-elget-plugin "magit")
