@@ -111,3 +111,6 @@ integration". Otherwise, read on.
 ### Tramp is timing out
 
 If you get the error `tramp ssh: connect to host c port 22: Operation timed out` and you are running OS X Mavericks with Emacs installed using Homebrew, then this is probably due to the Mavericks upgrade. Try reinstalling Emacs through Homebrew and remove the folder `~/.emacs.d/el-get` (note: this will remove all your el-get plugins, and they will need to be reinstalled).
+
+### Fail to install el-get
+For some reasons, `url-eval` may fail to fetch the raw file of `el-get-install.el`. An optional manual way is to open the installer from `.emacs.d/settings/el-get-install.el` and evaluate the entire region with `eval-region` to make el-get installed ready.
