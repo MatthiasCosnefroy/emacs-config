@@ -59,7 +59,7 @@
          helm-descbinds ; describe keybindings using helm
          switch-window  ; takes over C-x o
          color-theme-solarized  ; the solarized color theme
-         predictive     ; predictive-mode for AUCTeX
+         ;predictive     ; predictive-mode for AUCTeX
          ;jedi           ; general Python support
          ;pydoc-info     ; Python documentation
          ;magit          ; git plugin
