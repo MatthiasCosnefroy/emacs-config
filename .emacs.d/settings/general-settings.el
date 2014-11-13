@@ -57,6 +57,13 @@
 ; add a new line when going to the next line
 (setq next-line-add-newlines nil)
 
+; spelling check
+(dolist (hook '(text-mode-hook
+                rst-mode-hook
+                change-log-mode-hook
+                log-edit-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+
 ;
 ;; Windows
 ;;

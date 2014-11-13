@@ -42,6 +42,10 @@
               :pkgname "capitaomorte/yasnippet"
               :features "yasnippet"
               :compile "yasnippet.el")
+        (:name multi-web-mode
+               :type git
+               :url "git@github.com:fgallina/multi-web-mode.git"
+               :features zotelo)
         ))
 
 ; custom packages to install
