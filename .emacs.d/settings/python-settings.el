@@ -75,29 +75,15 @@
 ;; (require 'pydoc-info)
 
 ; Set PYTHONPATH, because we don't load .bashrc
-(defun set-python-path-from-shell-PYTHONPATH ()
-  (let ((path-from-shell (shell-command-to-string
-                          "$SHELL -i -c 'echo $PYTHONPATH'")))
-    (setenv "PYTHONPATH" path-from-shell)))
-(if window-system (set-python-path-from-shell-PYTHONPATH))
-(setq auto-mode-alist
-      (append
-       (list '("\\.pyx" . python-mode))
-       auto-mode-alist))
-
-; pyflakes
-;; http://stackoverflow.com/a/1257306/347942
-(when (load "flymake" t)
-  (defun flymake-pyflakes-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
-           (local-file (file-relative-name
-                        temp-file
-                        (file-name-directory buffer-file-name))))
-(list "pyflakes" (list local-file))))
-  (add-to-list 'flymake-allowed-file-name-masks
-               '("\\.py\\'" flymake-pyflakes-init)))
-(add-hook 'python-mode-hook 'flymake-mode)
+;; (defun set-python-path-from-shell-PYTHONPATH ()
+;;   (let ((path-from-shell (shell-command-to-string
+;;                           "$SHELL -i -c 'echo $PYTHONPATH'")))
+;;     (setenv "PYTHONPATH" path-from-shell)))
+;; (if window-system (set-python-path-from-shell-PYTHONPATH))
+;; (setq auto-mode-alist
+;;       (append
+;;        (list '("\\.pyx" . python-mode))
+;;        auto-mode-alist))
 
 ; keybindings
 (eval-after-load 'python

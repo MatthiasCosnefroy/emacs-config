@@ -1,4 +1,6 @@
-; set the el-get path, and create it if it doesn't exist
+;;; Basic settings of emacs
+
+;; set the el-get path, and create it if it doesn't exist
 (setq elget-path "~/.emacs.d/el-get/")
 (create-directory elget-path)
 
@@ -63,6 +65,7 @@
          helm-descbinds ; describe keybindings using helm
          switch-window  ; takes over C-x o
          color-theme-solarized  ; the solarized color theme
+         flycheck       ; on-the-fly syntax checking
          ;predictive     ; predictive-mode for AUCTeX
          ;jedi           ; general Python support
          ;pydoc-info     ; Python documentation
