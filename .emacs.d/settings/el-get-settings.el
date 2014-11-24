@@ -29,25 +29,13 @@
                :type git
                :url "git://github.com/motus/pig-mode.git"
                :features pig-mode)
-        (:name yaml-mode
-               :type git
-               :url "git://github.com/yoshiki/yaml-mode.git"
-               :features yaml-mode)
-        (:name zotelo
-               :type git
-               :url "git@github.com:vitoshka/zotelo.git"
-               :features zotelo)
         (:name yasnippet
-              :website "https://github.com/capitaomorte/yasnippet.git"
-              :description "YASnippet is a template system for Emacs."
-              :type github
-              :pkgname "capitaomorte/yasnippet"
-              :features "yasnippet"
-              :compile "yasnippet.el")
-        (:name multi-web-mode
-               :type git
-               :url "git@github.com:fgallina/multi-web-mode.git"
-               :features zotelo)
+               :website "https://github.com/capitaomorte/yasnippet.git"
+               :description "YASnippet is a template system for Emacs."
+               :type github
+               :pkgname "capitaomorte/yasnippet"
+               :features "yasnippet"
+               :compile "yasnippet.el")
         ))
 
 ; custom packages to install
@@ -66,14 +54,17 @@
          switch-window  ; takes over C-x o
          color-theme-solarized  ; the solarized color theme
          flycheck       ; on-the-fly syntax checking
-         ;predictive     ; predictive-mode for AUCTeX
-         ;jedi           ; general Python support
-         ;pydoc-info     ; Python documentation
-         ;magit          ; git plugin
-         ;matlab-mode    ; support Matlab files
-         ;nyan-mode      ; silly mode that renders a nyan cat
-         ;nxhtml         ; MuMaMo
-         ;popup          ; visual popup (e.g., for auto completion)
+         multi-web-mode ; auto select major mode for HTML files
+         zotelo         ; Zotero citation system
+         yaml-mode      ; YAML syntax
+         pig-mode       ; Pig syntax
+         predictive     ; predictive-mode for AUCTeX
+         jedi           ; general Python support
+         pydoc-info     ; Python documentation
+         magit          ; git plugin
+         matlab-mode    ; support Matlab files
+         nyan-mode      ; silly mode that renders a nyan cat
+         popup          ; visual popup (e.g., for auto completion)
          )))
 ;
 ;; first enable shallow clone, so we don't need to clone the entire

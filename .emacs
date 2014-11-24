@@ -1,3 +1,7 @@
+;;; Initial Emacs settings
+;;; Modified by Xiaming Chen
+;;; xiaming.chen@gmx.com
+
 ;; path where settings files are kept
 (add-to-list 'load-path "~/.emacs.d/settings")
 
@@ -17,61 +21,64 @@
 ;;; Utilities ;;;
 ;---------------;
 
-; don't show the tool bar
+;; don't show the tool bar
 (require 'tool-bar)
 (tool-bar-mode 0)
 
-; turn on mouse wheel support for scrolling
+;; turn on mouse wheel support for scrolling
 (require 'mwheel)
 (mouse-wheel-mode 1)
 
-; show line and colume number
+;; show line and colume number
 (require 'linum)
 (global-linum-mode 1)
 (column-number-mode 1)
 
-; highlight lines that go beyond thw columnus limit
+;; highlight lines that go beyond thw columnus limit
 (require 'whitespace)
 (setq whitespace-style '(face empty tabs lines-tail trailing))
 (global-whitespace-mode t)
 (setq whitespace-line-column 79)
 
-; highlight parentheses when the cursor is next to them
+;; highlight parentheses when the cursor is next to them
 (require 'paren)
 (show-paren-mode 1)
 
-; text decoration
+;; text decoration
 (require 'font-lock)
-;(setq font-lock-maximum-decoration 1)
+(setq font-lock-maximum-decoration 0)
 (global-font-lock-mode 1)
 (global-hi-lock-mode nil)
 (setq jit-lock-contextually 1)
 (setq jit-lock-stealth-verbose 1)
 
-; Auto complete
+;; Auto complete
 (require 'auto-complete-settings)
 
-; Camelcase functions
+;; Camelcase functions
 (require 'camelcase-settings)
 
-; Helm
+;; Helm
 (require 'helm-settings)
 
+;; Flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 ;; Git
-;; (include-elget-plugin "magit")
-;; (require 'magit)
+(include-elget-plugin "magit")
+(require 'magit)
 
 ;; Popup
-;; (include-elget-plugin "popup")
-;; (require 'popup)
+(include-elget-plugin "popup")
+(require 'popup)
 
 ;; Websocket
-;; (include-elget-plugin "websocket")
-;; (require 'websocket)
+(include-elget-plugin "websocket")
+(require 'websocket)
 
 ;; Request
-;; (include-elget-plugin "request")
-;; (require 'request)
+(include-elget-plugin "request")
+(require 'request)
 
 ;-----------;
 ;;; Modes ;;;
@@ -105,13 +112,8 @@
 ;; web development
 (require 'web-dev-settings)
 
-;; MuMaMo
-;; (require 'mumamo-settings)
-
 ;; Matlab mode
-;; (require 'matlab-settings)
+(require 'matlab-settings)
 
 ;; Nyancat mode!
-;; (nyan-mode 1)
-
-;; THE END
+(nyan-mode 1)
