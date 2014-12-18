@@ -18,6 +18,20 @@
 ;;; Settings  ;;;
 ;---------------;
 
+(include-elget-plugin "popup")
+(require 'popup)
+
+(include-elget-plugin "websocket")
+(require 'websocket)
+
+(include-elget-plugin "request")
+(require 'request)
+
+(include-elget-plugin "magit")
+(require 'magit)
+
+(nyan-mode 1)
+
 ;; Auto complete
 (require 'auto-complete-settings)
 
@@ -49,10 +63,10 @@
 (require 'web-dev-settings)
 
 ;; Ido mode
-;; (require 'ido-settings)
+(require 'ido-settings)
 
 ;; SCSS Mode
-;; (require 'scss-settings)
+(require 'scss-settings)
 
 ;; Matlab mode
-;; (require 'matlab-settings)
+(require 'matlab-settings)
