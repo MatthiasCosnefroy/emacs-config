@@ -45,7 +45,6 @@
        '(auto-complete  ; auto completion
          auctex         ; LaTeX plugin
          auto-complete-auctex   ; auctex mode completion
-         ein            ; IPython notebook plugin
          ess            ; Emacs speaks statistics
          markdown-mode  ; support for Markdown files
          scss-mode      ; support for SCSS files
@@ -58,13 +57,9 @@
          zotelo         ; Zotero citation system
          yaml-mode      ; YAML syntax
          pig-mode       ; Pig syntax
-         predictive     ; predictive-mode for AUCTeX
          jedi           ; general Python support
          pydoc-info     ; Python documentation
-         magit          ; git plugin
          matlab-mode    ; support Matlab files
-         nyan-mode      ; silly mode that renders a nyan cat
-         popup          ; visual popup (e.g., for auto completion)
          )))
 ;
 ;; first enable shallow clone, so we don't need to clone the entire
