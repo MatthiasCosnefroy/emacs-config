@@ -59,7 +59,6 @@
          matlab-mode    ; support Matlab files
          switch-window  ; takes over C-x o
          color-theme-solarized  ; the solarized color theme
-         flycheck       ; on-the-fly syntax checking
          )))
 ;
 ;; first enable shallow clone, so we don't need to clone the entire
