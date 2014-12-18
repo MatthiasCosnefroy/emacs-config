@@ -18,20 +18,6 @@
 ;;; Settings  ;;;
 ;---------------;
 
-(include-elget-plugin "popup")
-(require 'popup)
-
-(include-elget-plugin "websocket")
-(require 'websocket)
-
-(include-elget-plugin "request")
-(require 'request)
-
-(include-elget-plugin "magit")
-(require 'magit)
-
-(nyan-mode 1)
-
 ;; Auto complete
 (require 'auto-complete-settings)
 
