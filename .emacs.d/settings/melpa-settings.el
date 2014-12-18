@@ -25,5 +25,6 @@
 ;; Install packages
 (package-install 'flycheck)
 (package-install 'yasnippet)
+(package-install 'pig-mode)
 
 (provide 'melpa-settings)
