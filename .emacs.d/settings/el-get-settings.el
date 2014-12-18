@@ -60,10 +60,6 @@
          jedi           ; general Python support
          pydoc-info     ; Python documentation
          matlab-mode    ; support Matlab files
-         ein
-         magit
-         nyan-mode
-         popup
          )))
 ;
 ;; first enable shallow clone, so we don't need to clone the entire
