@@ -4,6 +4,7 @@
 
 ;; pig-mode by motus
 ;; https://github.com/motus/pig-mode
+(include-elget-plugin "pig-mode")
 (require 'pig-mode)
 
 ;; pig runtime
