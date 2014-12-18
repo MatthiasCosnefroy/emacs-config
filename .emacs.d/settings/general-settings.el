@@ -62,7 +62,6 @@
 
 ;; text decoration
 (require 'font-lock)
-(setq font-lock-maximum-decoration 0)
 (global-font-lock-mode 1)
 (global-hi-lock-mode nil)
 (setq jit-lock-contextually 1)
