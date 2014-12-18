@@ -15,12 +15,14 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 
+;; Configure use-package
 (if (not (package-installed-p 'use-package))
     (progn
       (package-refresh-contents)
       (package-install 'use-package)))
-
 (require 'use-package)
+
+;; Install packages
 (use-package flycheck)
 
 (provide 'melpa-settings)
