@@ -11,6 +11,9 @@
 ;; install dependencies with el-get
 (require 'el-get-settings)
 
+;; install dependencies with MELPA
+(require 'melpa-settings.el)
+
 ;; configure general settings
 (require 'general-settings)
 
