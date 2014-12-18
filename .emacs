@@ -64,28 +64,9 @@
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-;; Git
-(include-elget-plugin "magit")
-(require 'magit)
-
-;; Popup
-(include-elget-plugin "popup")
-(require 'popup)
-
-;; Websocket
-(include-elget-plugin "websocket")
-(require 'websocket)
-
-;; Request
-(include-elget-plugin "request")
-(require 'request)
-
 ;-----------;
 ;;; Modes ;;;
 ;-----------;
-
-;; Ido mode
-(require 'ido-settings)
 
 ;; Pig mode
 (require 'pig-settings)
@@ -99,21 +80,20 @@
 ;; LaTeX and Auctex
 (require 'latex-settings)
 
-;; SCSS Mode
-(require 'scss-settings)
-
 ;; R development mode
 (require 'r-settings)
 
-;; yaml mode
+;; YAML mode
 (require 'yaml-settings)
-(put 'upcase-region 'disabled nil)
 
-;; web development
+;; Web development
 (require 'web-dev-settings)
 
-;; Matlab mode
-(require 'matlab-settings)
+;; Ido mode
+;; (require 'ido-settings)
 
-;; Nyancat mode!
-(nyan-mode 1)
+;; SCSS Mode
+;; (require 'scss-settings)
+
+;; Matlab mode
+;; (require 'matlab-settings)
