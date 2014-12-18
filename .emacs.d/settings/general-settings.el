@@ -36,7 +36,6 @@
 ;;-------
 
 ;; Flycheck
-(require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; turn on mouse wheel support for scrolling
