@@ -39,6 +39,9 @@
 ;; Python mode
 (require 'python-settings)
 
+;; Ido mode
+(require 'ido-settings)
+
 ;; LaTeX and Auctex
 (require 'latex-settings)
 
@@ -50,9 +53,6 @@
 
 ;; Web development
 (require 'web-dev-settings)
-
-;; Ido mode
-(require 'ido-settings)
 
 ;; SCSS Mode
 (require 'scss-settings)
