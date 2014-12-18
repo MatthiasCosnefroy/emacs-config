@@ -10,5 +10,7 @@
 (add-hook 'yaml-mode-hook
           '(lambda ()
              (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+            
+(put 'upcase-region 'disabled nil)
 
 (provide 'yaml-settings)
