@@ -29,13 +29,6 @@
                :type git
                :url "git://github.com/motus/pig-mode.git"
                :features pig-mode)
-        (:name yasnippet
-               :website "https://github.com/capitaomorte/yasnippet.git"
-               :description "YASnippet is a template system for Emacs."
-               :type github
-               :pkgname "capitaomorte/yasnippet"
-               :features "yasnippet"
-               :compile "yasnippet.el")
         ))
 
 ; custom packages to install
