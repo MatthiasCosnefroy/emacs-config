@@ -23,6 +23,6 @@
 (require 'use-package)
 
 ;; Install packages
-(use-package flycheck)
+(package-install 'flycheck)
 
 (provide 'melpa-settings)
