@@ -22,6 +22,13 @@
 (include-elget-plugin "el-get")
 (unless (require 'el-get nil t)
   (install-el-get))
+  
+(setq el-get-sources
+  '((:name pig-mode
+    :type git
+    :url "git://github.com/motus/pig-mode.git"
+    :features pig-mode)
+  ))
 
 ; custom packages to install
 (setq my-elget-packages
