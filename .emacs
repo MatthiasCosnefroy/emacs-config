@@ -14,12 +14,12 @@
 ;; install dependencies with MELPA
 (require 'melpa-settings)
 
-;; configure general settings
-(require 'general-settings)
-
 ;---------------;
 ;;; Settings  ;;;
 ;---------------;
+
+;; Configure general settings
+(require 'general-settings)
 
 ;; Auto complete
 (require 'auto-complete-settings)
