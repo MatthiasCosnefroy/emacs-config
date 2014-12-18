@@ -54,6 +54,7 @@
          color-theme-solarized  ; the solarized color theme
          flycheck       ; on-the-fly syntax checking
          multi-web-mode ; auto select major mode for HTML files
+         scss           ; support CSS editing
          zotelo         ; Zotero citation system
          yaml-mode      ; YAML syntax
          pig-mode       ; Pig syntax
