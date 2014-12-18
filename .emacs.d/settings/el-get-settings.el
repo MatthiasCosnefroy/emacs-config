@@ -59,6 +59,7 @@
          matlab-mode    ; support Matlab files
          switch-window  ; takes over C-x o
          color-theme-solarized  ; the solarized color theme
+         nyan-mode      ; display how far you are through a file
          )))
 ;
 ;; first enable shallow clone, so we don't need to clone the entire
