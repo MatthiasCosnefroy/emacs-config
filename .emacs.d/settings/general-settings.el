@@ -38,6 +38,9 @@
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+;; file progressing bar
+(nyan-mode 1)
+
 ;; turn on mouse wheel support for scrolling
 (require 'mwheel)
 (mouse-wheel-mode 1)
