@@ -51,7 +51,7 @@
          helm-descbinds ; describe keybindings using helm
          switch-window  ; takes over C-x o
          color-theme-solarized  ; the solarized color theme
-         flycheck       ; on-the-fly syntax checking
+         ;;flycheck       ; on-the-fly syntax checking
          multi-web-mode ; auto select major mode for HTML files
          scss-mode      ; support for CSS files
          zotelo         ; Zotero citation system
