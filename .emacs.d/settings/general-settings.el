@@ -2,9 +2,10 @@
 ;;; General or Global Settings ;;;
 ;--------------------------------;
 
-;
+;;-----------
 ;; Systems
-;;
+;;-----------
+
 ;; set PATH, because we don't load .bashrc
 (if window-system (set-exec-path-from-shell-PATH))
 
@@ -30,9 +31,40 @@
 ; disable auto save
 (setq auto-save-default nil)
 
-;
+;;-------
 ;; Edit
-;;
+;;-------
+
+;; Flycheck
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+;; turn on mouse wheel support for scrolling
+(require 'mwheel)
+(mouse-wheel-mode 1)
+
+;; show line and colume number
+(require 'linum)
+(global-linum-mode 1)
+(column-number-mode 1)
+
+;; highlight lines that go beyond thw columnus limit
+(require 'whitespace)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(global-whitespace-mode t)
+(setq whitespace-line-column 79)
+
+;; highlight parentheses when the cursor is next to them
+(require 'paren)
+(show-paren-mode 1)
+
+;; text decoration
+(require 'font-lock)
+(setq font-lock-maximum-decoration 0)
+(global-font-lock-mode 1)
+(global-hi-lock-mode nil)
+(setq jit-lock-contextually 1)
+(setq jit-lock-stealth-verbose 1)
+
 ;; always use spaces, not tabs, when indenting
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -64,9 +96,14 @@
                 log-edit-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
 
-;
+;;---------
 ;; Windows
-;;
+;;---------
+
+;; don't show the tool bar
+(require 'tool-bar)
+(tool-bar-mode 0)
+
 ;; default window width and height
 (defun custom-set-frame-size ()
   (add-to-list 'default-frame-alist '(height . 40))
