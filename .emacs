@@ -8,11 +8,11 @@
 ;; define various custom functions
 (require 'custom-functions)
 
-;; configure general settings
-(require 'general-settings)
-
 ;; install dependencies with el-get
 (require 'el-get-settings)
+
+;; configure general settings
+(require 'general-settings)
 
 ;---------------;
 ;;; Settings  ;;;
