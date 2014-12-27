@@ -1,7 +1,7 @@
 # Emacs Configuration
 
-Jessica Hamrick  
-jhamrick@berkeley.edu
+Jessica Hamrick - jhamrick@berkeley.edu (<=2013)
+Xiaming Chen - chenxm35@gmail.com (2014)
 
 **Tested on versions:**
 * GNU Emacs 24.3.1 (x86_64-apple-darwin13.1.0, NS apple-appkit-1265.19) of 2014-04-06
