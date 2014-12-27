@@ -1,6 +1,7 @@
 # Emacs Configuration
 
 Jessica Hamrick - jhamrick@berkeley.edu (<=2013)
+
 Xiaming Chen - chenxm35@gmail.com (2014)
 
 **Tested on versions:**
