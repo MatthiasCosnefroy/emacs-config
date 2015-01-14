@@ -39,11 +39,15 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; spelling check
-;(dolist (hook '(text-mode-hook
-;                rst-mode-hook
-;                change-log-mode-hook
-;                log-edit-mode-hook))
-;  (add-hook hook (lambda () (flyspell-mode 1))))
+(setq ispell-program-name "aspell")
+(dolist
+    (hook
+     '(text-mode-hook
+       rst-mode-hook
+       change-log-mode-hook
+       log-edit-mode-hook))
+  (add-hook
+   hook (lambda () (flyspell-mode 1))))
 
 ;; file progressing bar
 (nyan-mode 1)
