@@ -15,8 +15,7 @@
 
 ; install el-get itself
 (defun install-el-get ()
-  (eval-url
-   "https://raw.githubusercontent.com/caesar0301/emacs-config/master/.emacs.d/settings/el-get-install.el"))
+  (eval-url "https://github.com/dimitri/el-get/raw/master/el-get-install.el"))
 
 ; add el-get to the load path, and install it if it doesn't exist
 (include-elget-plugin "el-get")
