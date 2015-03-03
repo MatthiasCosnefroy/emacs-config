@@ -31,6 +31,7 @@ required on Mac OS X are listed below (you can install them via
 
 * [aspell (for spell checking)](http://www.emacswiki.org/emacs/InteractiveSpell)
 * [livedown for markdown](https://github.com/shime/emacs-livedown)
+* Version control systems: `git`, `bzr`, `hg` and `cvs`
 
 ## Emacs plugins
 
@@ -63,14 +64,10 @@ listed below:
 Here are some issues I or others have run into when installing this configuration. For debug reporting, please visit the
 [project issue page](https://github.com/caesar0301/emacs-config/issues).
 
-### Fail to install el-get
+#### Fail to install el-get
 For some reasons, `url-eval` may fail to fetch the raw file of `el-get-install.el`. An optional manual way is to open the installer from `.emacs.d/settings/el-get-install.el` and evaluate the entire region with `eval-region` to make el-get installed ready.
 
-### Version control systems
-
-To install all the plugins above, you need to have several different version control systems installed, including `git`, `bzr`, and `cvs`.
-
-### Trouble building AUCTeX
+#### Trouble building AUCTeX
 
 If you get the following error:
 
@@ -82,6 +79,6 @@ There are a few possible causes. Try these steps:
 2. Try running emacs from the command line (it could be an issue with not finding the right path).
 3. If that doesn't work, run emacs from the command line with the `--debug-init` flag. This will give you more information about the error, and possibly point you towards the solution.
 
-### Tramp is timing out
+#### Tramp timing out
 
 If you get the error `tramp ssh: connect to host c port 22: Operation timed out` and you are running OS X Mavericks with Emacs installed using Homebrew, then this is probably due to the Mavericks upgrade. Try reinstalling Emacs through Homebrew and remove the folder `~/.emacs.d/el-get` (note: this will remove all your el-get plugins, and they will need to be reinstalled).
