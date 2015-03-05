@@ -31,6 +31,12 @@
 ; disable auto save
 (setq auto-save-default nil)
 
+; load local env values for emacs terminal
+(setq shell-command-switch "-ic")
+(setenv "PATH"
+  (concat "/usr/texbin" ":"
+    (getenv "PATH")))
+
 ;;-------
 ;; Edit
 ;;-------
