@@ -56,7 +56,7 @@
    hook (lambda () (flyspell-mode 1))))
 
 ;; file progressing bar
-(nyan-mode 1)
+;; (nyan-mode 1)
 
 ;; turn on mouse wheel support for scrolling
 (require 'mwheel)
