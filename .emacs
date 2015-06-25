@@ -19,7 +19,7 @@
 (setq enable-web-dev 1)
 (setq enable-scss 1)
 (setq enable-matlab 1)
-(setq enable-nyan 1)
+(setq enable-nyan 0)
 
 ;; define various custom functions
 (require 'custom-functions)
