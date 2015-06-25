@@ -21,7 +21,7 @@
 (include-elget-plugin "el-get")
 (unless (require 'el-get nil t)
   (install-el-get))
-  
+
 (setq el-get-sources
   '((:name pig-mode
     :type git
@@ -33,7 +33,8 @@
 (setq my-elget-packages
       (append
        (mapcar 'el-get-source-name el-get-sources)
-       '(auto-complete  ; auto completion
+       '(
+         auto-complete  ; auto completion
          auctex         ; LaTeX plugin
          auto-complete-auctex   ; auctex mode completion
          ess            ; Emacs speaks statistics
@@ -50,8 +51,9 @@
          matlab-mode    ; support Matlab files
          switch-window  ; takes over C-x o
          color-theme-solarized  ; the solarized color theme
-         ;;nyan-mode      ; display how far you are through a file
-         )))
+         ;nyan-mode      ; display how far you are through a file
+         )
+       ))
 ;
 ;; first enable shallow clone, so we don't need to clone the entire
 ;; history of every project

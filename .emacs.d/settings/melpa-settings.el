@@ -4,6 +4,7 @@
 
 ;; Install
 (require 'package)
+
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (when (< emacs-major-version 24)
@@ -20,6 +21,7 @@
     (progn
       (package-refresh-contents)
       (package-install 'use-package)))
+
 (require 'use-package)
 
 ;; Install packages

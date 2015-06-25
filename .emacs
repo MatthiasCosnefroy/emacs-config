@@ -5,6 +5,21 @@
 ;; path where settings files are kept
 (add-to-list 'load-path "~/.emacs.d/settings")
 
+;; triggers to control plugins
+(setq enable-auto-complete 1)
+(setq enable-camelcase 1)
+(setq enable-helm 1)
+(setq enable-pig 1)
+(setq enable-markdown 1)
+(setq enable-python 1)
+(setq enable-ido 1)
+(setq enable-latex 1)
+(setq enable-rstat 1)
+(setq enable-yaml 1)
+(setq enable-web-dev 1)
+(setq enable-scss 1)
+(setq enable-matlab 1)
+
 ;; define various custom functions
 (require 'custom-functions)
 
@@ -14,48 +29,7 @@
 ;; install dependencies with MELPA
 (require 'melpa-settings)
 
-;---------------;
-;;; Settings  ;;;
-;---------------;
-
 ;; Configure general settings
 (require 'general-settings)
 
-;; Auto complete
-(require 'auto-complete-settings)
-
-;; Camelcase functions
-(require 'camelcase-settings)
-
-;; Helm
-(require 'helm-settings)
-
-;; Pig mode
-(require 'pig-settings)
-
-;; Markdown mode
-(require 'markdown-settings)
-
-;; Python mode
-(require 'python-settings)
-
-;; Ido mode
-(require 'ido-settings)
-
-;; LaTeX and Auctex
-(require 'latex-settings)
-
-;; R development mode
-(require 'r-settings)
-
-;; YAML mode
-(require 'yaml-settings)
-
-;; Web development
-(require 'web-dev-settings)
-
-;; SCSS Mode
-(require 'scss-settings)
-
-;; Matlab mode
-(require 'matlab-settings)
+;; EOF
