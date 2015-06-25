@@ -1,11 +1,11 @@
-;;; Initial Emacs settings
-;;; Modified by Xiaming Chen
-;;; xiaming.chen@gmx.com
+;;; emacs-config -- my emacs configuration
+;;;
+;;; By Xiaming Chen <chen@xiaming.me>
 
 ;; path where settings files are kept
 (add-to-list 'load-path "~/.emacs.d/settings")
 
-;; triggers to control plugins
+;; you CAN modify freely to trigger plugins
 (setq enable-auto-complete 1)
 (setq enable-camelcase 1)
 (setq enable-helm 1)
@@ -19,6 +19,7 @@
 (setq enable-web-dev 1)
 (setq enable-scss 1)
 (setq enable-matlab 1)
+(setq enable-nyan 1)
 
 ;; define various custom functions
 (require 'custom-functions)

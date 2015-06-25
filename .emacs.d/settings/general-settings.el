@@ -74,7 +74,7 @@
    hook (lambda () (flyspell-mode 1))))
 
 ;; file progressing bar
-;; (nyan-mode 1)
+(if enable-nyan (setq nyan-mode 1))
 
 ;; turn on mouse wheel support for scrolling
 (require 'mwheel)
@@ -177,9 +177,9 @@
 
 ; each line of text gets one line on the screen (i.e., text will run off
 ; the left instead of wrapping around onto a new line)
-;(setq-default truncate-lines 0)
+(setq-default truncate-lines 1)
 
 ; truncate lines even in partial-width windows
-;(setq truncate-partial-width-windows 0)
+(setq truncate-partial-width-windows 0)
 
 (provide 'general-settings)
