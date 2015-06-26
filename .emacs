@@ -15,7 +15,7 @@
 (setq enable-markdown t)
 (setq enable-matlab t)
 (setq enable-nyan nil)
-(setq enable-pig t)
+(setq enable-pig nil)
 (setq enable-python t)
 (setq enable-rstat nil)
 (setq enable-scss t)
