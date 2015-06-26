@@ -8,7 +8,7 @@
 ;; plugin triggers (change 'nil' to 't' to be enable)
 (setq enable-auto-complete t)
 (setq enable-camelcase t)
-(setq enable-flycheck t)
+(setq enable-flycheck nil)
 (setq enable-helm t)
 (setq enable-ido t)
 (setq enable-latex nil)
@@ -17,11 +17,11 @@
 (setq enable-nyan nil)
 (setq enable-pig t)
 (setq enable-python t)
-(setq enable-rstat t)
+(setq enable-rstat nil)
 (setq enable-scss t)
 (setq enable-web-dev t)
 (setq enable-yaml t)
-(setq enable-yasnippet t)
+(setq enable-yasnippet nil)
 (setq enable-zotelo nil)
 
 ;; define various custom functions
