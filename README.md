@@ -20,6 +20,10 @@ will install [`el-get`](https://github.com/dimitri/el-get) and all of
 the other plugins listed in the next section. This initial
 installation may take a while, so be patient.
 
+After installation, change `.emacs` to meet your own requirements:
+
+    (setq enable-xxxxx t|nil)
+
 ## Dependencies
 
 For some of the plugins to work, you will need to have some external

@@ -5,21 +5,24 @@
 ;; path where settings files are kept
 (add-to-list 'load-path "~/.emacs.d/settings")
 
-;; you CAN modify freely to trigger plugins
-(setq enable-auto-complete 1)
-(setq enable-camelcase 1)
-(setq enable-helm 1)
-(setq enable-pig 1)
-(setq enable-markdown 1)
-(setq enable-python 1)
-(setq enable-ido 1)
-(setq enable-latex 1)
-(setq enable-rstat 1)
-(setq enable-yaml 1)
-(setq enable-web-dev 1)
-(setq enable-scss 1)
-(setq enable-matlab 1)
-(setq enable-nyan 0)
+;; plugin triggers (change 'nil' to 't' to be enable)
+(setq enable-auto-complete t)
+(setq enable-camelcase t)
+(setq enable-flycheck t)
+(setq enable-helm t)
+(setq enable-ido t)
+(setq enable-latex nil)
+(setq enable-markdown t)
+(setq enable-matlab t)
+(setq enable-nyan nil)
+(setq enable-pig t)
+(setq enable-python t)
+(setq enable-rstat t)
+(setq enable-scss t)
+(setq enable-web-dev t)
+(setq enable-yaml t)
+(setq enable-yasnippet t)
+(setq enable-zotelo nil)
 
 ;; define various custom functions
 (require 'custom-functions)
@@ -32,5 +35,20 @@
 
 ;; Configure general settings
 (require 'general-settings)
+
+;; Third party library settings
+(when enable-auto-complete (require 'auto-complete-settings))
+(when enable-camelcase (require 'camelcase-settings))
+(when enable-helm (require 'helm-settings))
+(when enable-pig (require 'pig-settings))
+(when enable-markdown (require 'markdown-settings))
+(when enable-python (require 'python-settings))
+(when enable-ido (require 'ido-settings))
+(when enable-latex (require 'latex-settings))
+(when enable-rstat (require 'r-settings))
+(when enable-yaml (require 'yaml-settings))
+(when enable-web-dev (require 'web-dev-settings))
+(when enable-scss (require 'scss-settings))
+(when enable-matlab (require 'matlab-settings))
 
 ;; EOF

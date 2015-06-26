@@ -2,24 +2,6 @@
 ;;; General or Global Settings ;;;
 ;--------------------------------;
 
-;----------------------------;
-;;; Third party libraries  ;;;
-;----------------------------;
-
-(if enable-auto-complete (require 'auto-complete-settings))
-(if enable-camelcase (require 'camelcase-settings))
-(if enable-helm (require 'helm-settings))
-(if enable-pig (require 'pig-settings))
-(if enable-markdown (require 'markdown-settings))
-(if enable-python (require 'python-settings))
-(if enable-ido (require 'ido-settings))
-(if enable-latex (require 'latex-settings))
-(if enable-rstat (require 'r-settings))
-(if enable-yaml (require 'yaml-settings))
-(if enable-web-dev (require 'web-dev-settings))
-(if enable-scss (require 'scss-settings))
-(if enable-matlab (require 'matlab-settings))
-
 ;;-----------
 ;; Systems
 ;;-----------
@@ -74,7 +56,7 @@
    hook (lambda () (flyspell-mode 1))))
 
 ;; file progressing bar
-(if enable-nyan (setq nyan-mode 1))
+(setq nyan-mode enable-nyan)
 
 ;; turn on mouse wheel support for scrolling
 (require 'mwheel)

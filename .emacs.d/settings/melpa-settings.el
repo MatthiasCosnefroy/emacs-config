@@ -21,11 +21,11 @@
     (progn
       (package-refresh-contents)
       (package-install 'use-package)))
-
 (require 'use-package)
 
 ;; Install packages
-(package-install 'flycheck)
-(package-install 'yasnippet)
+(when enable-flycheck (package-install 'flycheck))
+(when enable-yasnippet (package-install 'yasnippet))
+(when enable-pig (package-install 'pig-mode))
 
 (provide 'melpa-settings)
