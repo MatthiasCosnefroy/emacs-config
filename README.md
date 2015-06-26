@@ -29,8 +29,8 @@ required dependency that el-get doesn't install. Basic dependencies
 required on Mac OS X are listed below (you can install them via
 `brew install xxx` or in alternative ways):
 
-* [aspell (for spell checking)](http://www.emacswiki.org/emacs/InteractiveSpell)
-* [livedown for markdown](https://github.com/shime/emacs-livedown)
+* [aspell](http://www.emacswiki.org/emacs/InteractiveSpell)
+* [livedown](https://github.com/shime/emacs-livedown)
 * Version control systems: `git`, `bzr`, `hg` and `cvs`
 
 ## Emacs plugins
