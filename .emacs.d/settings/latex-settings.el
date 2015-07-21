@@ -8,21 +8,22 @@
 ;; Support Zotero library with zotelo.el
 (when enable-zotelo (add-hook 'TeX-mode-hook 'zotelo-minor-mode))
 
-; basic configuration
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq-default TeX-master nil)
 ; auctex
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 (include-elget-plugin "auctex")
 (load "auctex.el" nil t t)
+; preview latex quations, referrence, figures etc.
+(load "preview-latex.el" nil t t)
+
+; basic configuration
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq TeX-PDF-mode t)
+(setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
 ;(add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'linum-mode)
-
-
-
 
 ; start reftex-mode
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
@@ -31,11 +32,8 @@
 ; spell checking
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "english")
-;(add-hook 'LaTeX-mode-hook 'flyspell-mode)
-;(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
-
-; enable pdf mode (pdflatex) by default
-(setq TeX-PDF-mode t)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 
 ; custome LaTex command with -shell-escape option.
 ; useful for converting eps to pdf
@@ -48,8 +46,6 @@
 (setq TeX-source-correlate-mode t)
 (setq-default TeX-source-correlate-start-server t)
 
-; preview latex quations, referrence, figures etc.
-(load "preview-latex.el" nil t t)
 ; set preview programs
 (setq TeX-view-program-list
       '(("SumatraPDF" "SumatraPDF.exe %o") ; windows
