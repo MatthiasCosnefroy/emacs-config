@@ -41,6 +41,9 @@
 ;; Edit
 ;;-------
 
+;; syntax flycheck
+(when enable-flycheck (add-hook 'after-init-hook #'global-flycheck-mode))
+
 ;; spelling check
 (setq ispell-program-name "aspell")
 (dolist
