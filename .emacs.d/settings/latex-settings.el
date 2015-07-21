@@ -2,19 +2,27 @@
 ;;; LaTeX ;;;
 ;-----------;
 
-; auctex
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
-(include-elget-plugin "auctex")
-(load "auctex.el" nil t t)
+; A pretty interface to auctex completions
+(require 'auto-complete-auctex)
+
+;; Support Zotero library with zotelo.el
+(when enable-zotelo (add-hook 'TeX-mode-hook 'zotelo-minor-mode))
 
 ; basic configuration
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
+; auctex
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
+(include-elget-plugin "auctex")
+(load "auctex.el" nil t t)
 (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
 ;(add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'linum-mode)
+
+
+
 
 ; start reftex-mode
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
@@ -72,8 +80,5 @@
                     (output-dvi "xdvi")
                     (output-pdf "Evince")
                     (output-html "xdg-open"))))))
-
-; A pretty interface to auctex completions
-(require 'auto-complete-auctex)
 
 (provide 'latex-settings)
