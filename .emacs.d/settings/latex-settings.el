@@ -23,13 +23,11 @@
 ; spell checking
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "english")
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
-(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
+;(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+;(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 
 ; enable pdf mode (pdflatex) by default
-(setq TeX-PDF-mode t) ; OR
-;; (require 'tex)
-;; (TeX-global-PDF-mode t)
+(setq TeX-PDF-mode t)
 
 ; custome LaTex command with -shell-escape option.
 ; useful for converting eps to pdf
