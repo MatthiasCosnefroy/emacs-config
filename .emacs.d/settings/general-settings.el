@@ -44,6 +44,13 @@
 ;; syntax flycheck
 (when enable-flycheck (add-hook 'after-init-hook #'global-flycheck-mode))
 
+;; Support Zotero library with zotelo.el
+(when enable-zotelo (
+  (require 'zotelo)
+  (add-hook 'TeX-mode-hook 'zotelo-minor-mode)
+  ;(setq zotelo--auto-update-is-on t)
+)
+
 ;; spelling check
 (setq ispell-program-name "aspell")
 (dolist
@@ -51,7 +58,9 @@
      '(text-mode-hook
        rst-mode-hook
        change-log-mode-hook
-       log-edit-mode-hook))
+       log-edit-mode-hook
+       TeX-mode-hook
+       ))
   (add-hook
    hook (lambda () (flyspell-mode 1))))
 
