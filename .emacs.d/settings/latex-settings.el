@@ -75,8 +75,6 @@
                     (output-pdf "Evince")
                     (output-html "xdg-open"))))))
 
-; (setq zotelo--auto-update-is-on t)
-
 ; A pretty interface to auctex completions
 (require 'auto-complete-auctex)
 
