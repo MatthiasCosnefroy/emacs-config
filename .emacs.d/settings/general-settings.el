@@ -65,6 +65,7 @@
 ;; show line and colume number
 (require 'linum)
 (global-linum-mode 1)
+(setq linum-format "%d ")
 (column-number-mode 1)
 
 ;; highlight lines that go beyond thw columnus limit
