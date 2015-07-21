@@ -49,7 +49,7 @@
   (require 'zotelo)
   (add-hook 'TeX-mode-hook 'zotelo-minor-mode)
   ;(setq zotelo--auto-update-is-on t)
-)
+))
 
 ;; spelling check
 (setq ispell-program-name "aspell")
