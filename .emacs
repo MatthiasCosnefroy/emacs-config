@@ -50,5 +50,13 @@
 (when enable-web-dev (require 'web-dev-settings))
 (when enable-scss (require 'scss-settings))
 (when enable-matlab (require 'matlab-settings))
+;; syntax flycheck
+(when enable-flycheck (add-hook 'after-init-hook #'global-flycheck-mode))
+;; Support Zotero library with zotelo.el
+(when enable-zotelo (
+  (require 'zotelo)
+  (add-hook 'TeX-mode-hook 'zotelo-minor-mode)
+  ;(setq zotelo--auto-update-is-on t)
+))
 
 ;; EOF
