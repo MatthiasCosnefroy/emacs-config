@@ -27,5 +27,6 @@
 (when enable-flycheck (package-install 'flycheck))
 (when enable-yasnippet (package-install 'yasnippet))
 (when enable-pig (package-install 'pig-mode))
+(when enable-evil (package-install 'evil))
 
 (provide 'melpa-settings)
