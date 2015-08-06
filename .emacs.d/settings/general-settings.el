@@ -111,6 +111,12 @@
 ; add a new line when going to the next line
 (setq next-line-add-newlines nil)
 
+; set evil incremental search
+(when enable-evil (require 'evil)
+    (evil-mode 1)
+    (global-set-key (kbd "C-*") 'evil-search-symbol-forward)
+    (global-set-key (kbd "C-#") 'evil-search-symbol-backward))
+
 ;;---------
 ;; Windows
 ;;---------
