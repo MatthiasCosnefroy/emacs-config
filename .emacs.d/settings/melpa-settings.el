@@ -4,17 +4,11 @@
 
 ;; Install
 (require 'package)
-
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 (when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
-
-;; To use stable versions of packages
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 
 ;; Configure use-package
 (if (not (package-installed-p 'use-package))
@@ -23,10 +17,31 @@
       (package-install 'use-package)))
 (require 'use-package)
 
-;; Install packages
-(when enable-flycheck (package-install 'flycheck))
-(when enable-yasnippet (package-install 'yasnippet))
-(when enable-pig (package-install 'pig-mode))
-(when enable-evil (package-install 'evil))
+;; Install packages: basics
+(package-install 'switch-window)
+(package-install 'color-theme-solarized)
+(package-install 'evil)
+;; language modes
+(package-install 'yasnippet)
+(package-install 'pig-mode)
+(package-install 'pig-snippets)
+(package-install 'markdown-mode)
+(package-install 'jedi)
+(package-install 'pydoc-info)
+(package-install 'auctex)
+(package-install 'auto-complete-auctex)
+(package-install 'auto-complete)
+(package-install 'ess)
+(package-install 'yaml-mode)
+(package-install 'multi-web-mode)
+(package-install 'scss-mode)
+(package-install 'matlab-mode)
+;; misc utilities
+(package-install 'nyan-mode)
+(package-install 'flycheck)
+(package-install 'auto-complete)
+(package-install 'helm)
+(package-install 'helm-descbinds)
+(package-install 'zotelo)
 
 (provide 'melpa-settings)

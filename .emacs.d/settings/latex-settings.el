@@ -2,18 +2,11 @@
 ;;; LaTeX ;;;
 ;-----------;
 
-; A pretty interface to auctex completions
 (require 'auto-complete-auctex)
+(load "auctex.el" nil t t)
 
 ;; Support Zotero library with zotelo.el
-(when enable-zotelo (add-hook 'TeX-mode-hook 'zotelo-minor-mode))
-
-; auctex
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
-(include-elget-plugin "auctex")
-(load "auctex.el" nil t t)
-; preview latex quations, referrence, figures etc.
-(load "preview-latex.el" nil t t)
+(add-hook 'TeX-mode-hook 'zotelo-minor-mode)
 
 ; basic configuration
 (setq TeX-auto-save t)
@@ -21,7 +14,7 @@
 (setq TeX-PDF-mode t)
 (setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
-;(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'linum-mode)
 

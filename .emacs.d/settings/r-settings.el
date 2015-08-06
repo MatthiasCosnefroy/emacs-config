@@ -1,5 +1,4 @@
 ;; R mode with ESS mode configuration
-(include-elget-plugin "ess/lisp")
 (require 'ess-site)
 (require 'ess-eldoc)
 
@@ -13,7 +12,7 @@
 (show-paren-mode 1)
 
 ;; set indentation with old two whitespaces
-;(setq ess-default-style 'DEFAULT)
+(setq ess-default-style 'DEFAULT)
 
 ;; R style
 ;;; ESS
@@ -32,7 +31,8 @@
             (add-hook 'local-write-file-hooks
                       (lambda ()
                         (ess-nuke-trailing-whitespace)))))
-;(setq ess-nuke-trailing-whitespace-p 'ask)
+
+;; (setq ess-nuke-trailing-whitespace-p 'ask)
 ;; or even
 ;; (setq ess-nuke-trailing-whitespace-p t)
 

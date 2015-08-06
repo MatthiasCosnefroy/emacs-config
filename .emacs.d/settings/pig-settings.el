@@ -2,9 +2,6 @@
 ;;; Pig Programming ;;;
 ;------------------------;
 
-;; pig-mode by motus
-;; https://github.com/motus/pig-mode
-(include-elget-plugin "pig-mode")
 (require 'pig-mode)
 
 ;; pig runtime
@@ -12,7 +9,7 @@
 (setq pig-executable-options '("-x" "local"))
 (setq pig-executable-prompt-regexp "^grunt> ")
 (setq pig-indent-level 4)
-(setq pig-version "0.12.0")
+; (setq pig-version "0.12.0")
 
 (autoload 'pig-snippets-initialize "pig-snippets" nil nil nil)
 (eval-after-load 'yasnippet '(pig-snippets-initialize))

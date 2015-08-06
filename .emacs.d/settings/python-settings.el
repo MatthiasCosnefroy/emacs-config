@@ -12,9 +12,35 @@
 (add-hook 'python-mode-hook '(lambda ()
  (setq python-indent 4)))
 
-;; -----------------------------
-;; emacs IPython/notebook config
-;; -----------------------------
+; jedi python completion
+(require 'jedi)
+(setq jedi:setup-keys t)
+(autoload 'jedi:setup "jedi" nil t)
+(add-hook 'python-mode-hook 'jedi:setup)
+
+;; pydoc info
+(require 'pydoc-info)
+
+;; Set PYTHONPATH, because we don't load .bashrc
+(defun set-python-path-from-shell-PYTHONPATH ()
+  (let ((path-from-shell (shell-command-to-string
+                          "$SHELL -i -c 'echo $PYTHONPATH'")))
+    (setenv "PYTHONPATH" path-from-shell)))
+(if window-system (set-python-path-from-shell-PYTHONPATH))
+(setq auto-mode-alist
+      (append
+       (list '("\\.pyx" . python-mode))
+       auto-mode-alist))
+
+; keybindings
+(eval-after-load 'python
+  '(define-key python-mode-map (kbd "C-c !") 'python-shell-switch-to-shell))
+(eval-after-load 'python
+  '(define-key python-mode-map (kbd "C-c |") 'python-shell-send-region))
+
+;; -------------------------
+;; IPython/notebook config
+;; -------------------------
 
 ; set ipython env.
 ;;(setq
@@ -55,40 +81,5 @@
 ;;  (ein:notebooklist-load)
 ;;  (interactive)
 ;;  (ein:notebooklist-open))
-
-;; ------------------
-;; misc python config
-;; ------------------
-
-; jedi python completion
-;; (include-elget-plugin "ctable")   ; required for epc
-;; (include-elget-plugin "deferred") ; required for epc
-;; (include-elget-plugin "epc")      ; required for jedi
-;; (include-elget-plugin "jedi")
-;; (require 'jedi)
-;; (setq jedi:setup-keys t)
-;; (autoload 'jedi:setup "jedi" nil t)
-;; (add-hook 'python-mode-hook 'jedi:setup)
-
-; pydoc info
-;; (include-elget-plugin "pydoc-info-0.2")
-;; (require 'pydoc-info)
-
-; Set PYTHONPATH, because we don't load .bashrc
-;; (defun set-python-path-from-shell-PYTHONPATH ()
-;;   (let ((path-from-shell (shell-command-to-string
-;;                           "$SHELL -i -c 'echo $PYTHONPATH'")))
-;;     (setenv "PYTHONPATH" path-from-shell)))
-;; (if window-system (set-python-path-from-shell-PYTHONPATH))
-;; (setq auto-mode-alist
-;;       (append
-;;        (list '("\\.pyx" . python-mode))
-;;        auto-mode-alist))
-
-; keybindings
-(eval-after-load 'python
-  '(define-key python-mode-map (kbd "C-c !") 'python-shell-switch-to-shell))
-(eval-after-load 'python
-  '(define-key python-mode-map (kbd "C-c |") 'python-shell-send-region))
 
 (provide 'python-settings)
