@@ -90,12 +90,6 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-;; evil incremental search
-;(require 'evil)
-;(evil-mode 1)
-;(global-set-key (kbd "C-*") 'evil-search-symbol-forward)
-;(global-set-key (kbd "C-#") 'evil-search-symbol-backward)
-
 ;; spelling check
 (setq ispell-program-name "aspell")
 (dolist
