@@ -11,6 +11,7 @@
 (setq enable-flycheck t)
 (setq enable-helm t)
 (setq enable-ido t)
+(setq enable-evil t)
 (setq enable-yasnippet t)
 (setq enable-latex nil)
 (setq enable-markdown nil)
