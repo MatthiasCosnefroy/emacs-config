@@ -5,8 +5,17 @@
 (require 'auto-complete-auctex)
 (load "auctex.el" nil t t)
 
+;; preview side-by-side pane
+(latex-preview-pane-enable)
+
 ;; Support Zotero library with zotelo.el
 (add-hook 'TeX-mode-hook 'zotelo-minor-mode)
+
+;; math preview
+(autoload 'latex-math-preview-expression "latex-math-preview" nil t)
+(autoload 'latex-math-preview-insert-symbol "latex-math-preview" nil t)
+(autoload 'latex-math-preview-save-image-file "latex-math-preview" nil t)
+(autoload 'latex-math-preview-beamer-frame "latex-math-preview" nil t)
 
 ; basic configuration
 (setq TeX-auto-save t)

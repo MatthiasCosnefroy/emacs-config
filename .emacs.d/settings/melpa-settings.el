@@ -36,6 +36,8 @@
 (package-install 'jedi)
 (package-install 'pydoc-info)
 (package-install 'auctex)
+(package-install 'latex-preview-pane)
+(package-install 'latex-math-preview)
 (package-install 'auto-complete-auctex)
 (package-install 'auto-complete)
 (package-install 'ess)
