@@ -14,12 +14,6 @@ will copy all of the necessary files to `~/.emacs` and
 `~/.emacs.d`. Note that if these files exist for you already, **this
 will overwrite those files**.
 
-Once you have run the bootstrap script, start Emacs (make sure you are
-connected to the internet when you do this for the first time). It
-will install [`el-get`](https://github.com/dimitri/el-get) and all of
-the other plugins listed in the next section. This initial
-installation may take a while, so be patient.
-
 After installation, change `.emacs` to meet your own requirements:
 
     (setq enable-xxxxx t|nil)
@@ -39,13 +33,9 @@ required on Mac OS X are listed below (you can install them via
 
 ## Emacs plugins
 
-This configuration installs several plugins using
-[`el-get`](https://github.com/dimitri/el-get) and
-[`malpa`](http://melpa.org/). Both are supported if plugins
-are in one repository rather than the other. These plugins are
-specified in `.emacs.d/settings/el-get-settings.el` or
-`.emacs.d/settings/melpa-settings.el`, some of which are also
-listed below:
+This configuration installs several plugins using[`malpa`](http://melpa.org/).
+These plugins are specified in `.emacs.d/settings/melpa-settings.el`,
+some of which are also listed below:
 
 * `auctex` -- LaTeX plugin
 * `auto-complete` -- auto completion
@@ -67,9 +57,6 @@ listed below:
 
 Here are some issues I or others have run into when installing this configuration. For debug reporting, please visit the
 [project issue page](https://github.com/caesar0301/emacs-config/issues).
-
-#### Fail to install el-get
-For some reasons, `url-eval` may fail to fetch the raw file of `el-get-install.el`. An optional manual way is to open the installer from `.emacs.d/settings/el-get-install.el` and evaluate the entire region with `eval-region` to make el-get installed ready.
 
 #### Trouble building AUCTeX
 
