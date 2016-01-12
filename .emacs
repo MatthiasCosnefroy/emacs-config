@@ -154,6 +154,9 @@
 ;; add a new line when going to the next line
 (setq next-line-add-newlines nil)
 
+;; set default font size
+(set-face-attribute 'default nil :height 140)
+
 ;;---------
 ;; Windows
 ;;---------
