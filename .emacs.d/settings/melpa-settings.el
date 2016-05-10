@@ -12,16 +12,13 @@
 
 ;; Configure use-package
 (if (not (package-installed-p 'use-package))
-    (progn
-      (package-refresh-contents)
-      (package-install 'use-package)))
+  (progn
+    (when (not package-archive-contents)
+      (package-refresh-contents))
+    (package-install 'use-package)))
 (require 'use-package)
 
-;; Install packages: basics
-(package-install 'switch-window)
-(package-install 'color-theme-solarized)
-(package-install 'evil)
-;; language modes
+;; Install packages
 (package-install 'yasnippet)
 (package-install 'angular-snippets)
 (package-install 'django-snippets)
