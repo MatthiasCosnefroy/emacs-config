@@ -6,6 +6,7 @@
 **Tested on versions:**
 > GNU Emacs 24.4 (Mac OS X) of 2015-01-10  
 > GNU Emacs 24.4 (Linux x86_64) of 2015-01-10
+> GNU Emacs 24.5 (Linux x86_64) of 2016-05-10
 
 ## Installing
 
@@ -22,9 +23,10 @@ After installation, change `.emacs` to meet your own requirements:
 
 For some of the plugins to work, you will need to have some external
 dependencies installed, such as Python, IPython, git, etc. If the
-installation gives you an error, it might mean you are missing a
-required dependency that el-get doesn't install. Basic dependencies
-required on Mac OS X are listed below (you can install them via
+installation gives you an error, it might mean you are missing
+required dependency that melpa requires.
+
+Basic dependencies required on Mac OS X are listed below (you can install them via
 `brew install xxx` or in alternative ways):
 
 * [aspell](http://www.emacswiki.org/emacs/InteractiveSpell)
