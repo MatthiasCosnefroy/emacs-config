@@ -114,10 +114,10 @@
 (column-number-mode 1)
 
 ;; highlight lines that go beyond thw columnus limit
-(require 'whitespace)
-(setq whitespace-style '(face empty tabs lines-tail trailing))
-(global-whitespace-mode nil)
-(setq whitespace-line-column 79)
+;(require 'whitespace)
+;(setq whitespace-style '(face empty tabs lines-tail trailing))
+;(global-whitespace-mode nil)
+;(setq whitespace-line-column 79)
 
 ;; highlight parentheses when the cursor is next to them
 (require 'paren)
